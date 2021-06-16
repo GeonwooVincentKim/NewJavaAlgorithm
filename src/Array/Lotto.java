@@ -17,62 +17,80 @@ public class Lotto {
         return randomArray;
     }
 
-    public static boolean isExist(int[] randomArray, int randomValue) {
+    public static String printRandomNumber(int[] randomArray) {
+        String loopResult = "";
+
         for (int i = 0; i < randomArray.length; i++) {
-            if (randomArray[i] == randomValue) {
-                return true;
-            }
+            loopResult += randomArray[i] + " ";
         }
 
-        return false;
+        return loopResult;
+    }
+
+    public static boolean isExist(int[] randomArray, int randomValue) {
+        boolean insert = true;
+        for (int i = 0; i < randomArray.length; i++) {
+            if (randomArray[i] == randomValue) {
+                insert = false;
+                return insert;
+            }
+
+            // if (insert == true) {
+            // randomArray[i] = randomValue;
+            // }
+        }
+
+        return true;
     }
 
     public static void main(String[] args) {
         int lottoLength = 6;
-        int[] lotto = new int[lottoLength];
-        out.println(lotto);
+        int[] lotto = getRandomNumber(lottoLength);
 
-        // int idx = 0;
-        // while (true) {
-        // int number = (int) (Math.random() * 45) + 1;
-        // // out.println(number);
+        String loopResult = printRandomNumber(lotto);
+        out.println(loopResult);
 
-        // boolean insert = true;
-        // for (int i = 0; i <= idx; i++) {
-        // if (lotto[i] == number) {
-        // insert = false;
-        // // out.println(insert);
-        // break;
-        // }
-        // }
-
-        // if (insert == true) {
-        // lotto[idx] = number;
-        // idx++;
-        // // out.println(idx);
-        // }
-
-        // if (idx == 6) {
-        // break;
-        // }
-        // }
-
-        out.print("입력 값 : ");
-        for (int i = 0; i < lotto.length; i++) {
+        int idx = 0;
+        while (true) {
             int number = (int) (Math.random() * 45) + 1;
-            lotto[i] = number;
+            // out.println(number);
 
-            if (lotto[i] == number) {
-
+            boolean insert = true;
+            for (int i = 0; i <= idx; i++) {
+                if (lotto[i] == number) {
+                    insert = false;
+                    // out.println(insert);
+                    break;
+                }
             }
-            out.print(lotto[i] + " ");
+
+            if (insert == true) {
+                lotto[idx] = number;
+                idx++;
+                // out.println(idx);
+            }
+
+            if (idx == 6) {
+                break;
+            }
         }
 
-        out.println();
+        // out.print("입력 값 : ");
+        // for (int i = 0; i < lotto.length; i++) {
+        // int number = (int) (Math.random() * 45) + 1;
+        // lotto[i] = number;
 
-        out.print("결과 값 : ");
-        for (int i = 0; i < lotto.length; i++) {
-            out.print(lotto[i] + " ");
-        }
+        // if (lotto[i] == number) {
+
+        // }
+        // out.print(lotto[i] + " ");
+        // }
+
+        // out.println();
+
+        // out.print("결과 값 : ");
+        // for (int i = 0; i < lotto.length; i++) {
+        // out.print(lotto[i] + " ");
+        // }
     }
 }
