@@ -3,9 +3,9 @@ package Class.ClassStructor;
 import static java.lang.System.out;
 
 public class Cars {
-    private String color;
-    private String company;
-    private String type;
+    String color;
+    String company;
+    String type;
 
     public Cars() {
     }
