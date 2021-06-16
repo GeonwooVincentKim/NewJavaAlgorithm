@@ -21,56 +21,82 @@ public class Lotto {
         String loopResult = "";
 
         for (int i = 0; i < randomArray.length; i++) {
-            loopResult += randomArray[i] + " ";
+            if (!isExist(randomArray, randomArray[i])) {
+                loopResult += randomArray[i] + " ";
+            }
         }
 
         return loopResult;
     }
 
     public static boolean isExist(int[] randomArray, int randomValue) {
-        boolean insert = true;
+        boolean insert = false;
         for (int i = 0; i < randomArray.length; i++) {
             if (randomArray[i] == randomValue) {
-                insert = false;
+                insert = true;
                 return insert;
             }
 
-            // if (insert == true) {
-            // randomArray[i] = randomValue;
-            // }
+            if (insert == true) {
+                randomArray[i] = randomValue;
+            }
         }
 
-        return true;
+        return insert;
     }
 
     public static void main(String[] args) {
         int lottoLength = 6;
-        int[] lotto = getRandomNumber(lottoLength);
+        int[] lotto = new int[6];
+        int[] number = new int[lotto.length];
+        // int[] lotto = getRandomNumber(lottoLength);
 
-        String loopResult = printRandomNumber(lotto);
-        out.println(loopResult);
+        // String loopResult = printRandomNumber(lotto);
+        // out.println(loopResult);
 
-        int idx = 0;
-        while (true) {
-            int number = (int) (Math.random() * 45) + 1;
-            // out.println(number);
+        // int idx = 0;
+        // while (true) {
+        // int number = (int) (Math.random() * 45) + 1;
+        // // out.println(number);
 
-            boolean insert = true;
-            for (int i = 0; i <= idx; i++) {
-                if (lotto[i] == number) {
-                    insert = false;
-                    // out.println(insert);
-                    break;
-                }
+        // boolean insert = true;
+        // for (int i = 0; i <= idx; i++) {
+        // if (lotto[i] == number) {
+        // insert = false;
+        // // out.println(insert);
+        // break;
+        // }
+        // }
+
+        // if (insert == true) {
+        // lotto[idx] = number;
+        // idx++;
+        // // out.println(idx);
+        // }
+
+        // if (idx == 6) {
+        // break;
+        // }
+        // }
+
+        for (int i = 0; i < lottoLength; i++) {
+            number[i] = (int) (Math.random() * 45) + 1;
+        }
+
+        boolean insert = true;
+        for (int i = 0; i < lottoLength; i++) {
+            if (lotto[i] == number[i]) {
+                insert = false;
+                break;
             }
+        }
 
+        for (int i = 0; i < lotto.length; i++) {
             if (insert == true) {
-                lotto[idx] = number;
-                idx++;
-                // out.println(idx);
+                lotto[i] = number[i];
             }
 
-            if (idx == 6) {
+            if (i == 6) {
                 break;
             }
         }
@@ -89,8 +115,8 @@ public class Lotto {
         // out.println();
 
         // out.print("결과 값 : ");
-        // for (int i = 0; i < lotto.length; i++) {
-        // out.print(lotto[i] + " ");
-        // }
+        for (int i = 0; i < lotto.length; i++) {
+            out.print(lotto[i] + " ");
+        }
     }
 }
