@@ -21,11 +21,21 @@ public class CarMain2 {
         out.println(tico.type);
 
         for (int i = 0; i < cars.length; i++) {
-            cars[i] = tico;
+            cars[i] = new Cars();
+            cars[i].color = "화이트";
+            cars[i].company = "대우";
+            cars[i].type = "경차";
         }
 
+        out.println("0번 인덱스 color : " + cars[0].color);
+        out.println("1번 인덱스 color : " + cars[1].color);
         out.println("2번 인덱스 color : " + cars[2].color);
+
         cars[0].color = "블랙";
+        out.println();
+
+        out.println("0번 인덱스 color : " + cars[0].color);
+        out.println("1번 인덱스 color : " + cars[1].color);
         out.println("2번 인덱스 color : " + cars[2].color);
     }
 }
