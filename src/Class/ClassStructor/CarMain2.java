@@ -25,5 +25,7 @@ public class CarMain2 {
         }
 
         out.println("2번 인덱스 color : " + cars[2].color);
+        cars[0].color = "블랙";
+        out.println("2번 인덱스 color : " + cars[2].color);
     }
 }
