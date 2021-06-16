@@ -3,7 +3,7 @@ package Class.ClassStructor;
 import static java.lang.System.out;
 
 public class Cars {
-    String color;
+    private String color;
     private String company;
     private String type;
 
