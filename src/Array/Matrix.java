@@ -17,7 +17,7 @@ public class Matrix {
 
         for (i = 0; i < matrix.length; i++) {
             for (j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = value++;
+                matrix[i][j] = (value++) + 1;
                 out.print(matrix[i][j] + " ");
             }
             out.println();
@@ -27,7 +27,7 @@ public class Matrix {
 
         for (i = 0; i < matrix.length; i++) {
             for (j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = value--;
+                matrix[i][j] = (--value) + 1;
                 out.print(matrix[i][j] + " ");
             }
             out.println();
