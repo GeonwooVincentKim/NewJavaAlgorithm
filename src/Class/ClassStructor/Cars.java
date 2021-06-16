@@ -3,25 +3,25 @@ package Class.ClassStructor;
 import static java.lang.System.out;
 
 public class Cars {
-    private String car;
+    String color;
     private String company;
     private String type;
 
     public Cars() {
     }
 
-    public Cars(String car, String company, String type) {
-        this.setCar(car);
+    public Cars(String color, String company, String type) {
+        this.setColor(color);
         this.setCompany(company);
         this.setType(type);
     }
 
-    public String getCar() {
-        return car;
+    public String getColor() {
+        return color;
     }
 
-    public void setCar(String car) {
-        this.car = car;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getCompany() {

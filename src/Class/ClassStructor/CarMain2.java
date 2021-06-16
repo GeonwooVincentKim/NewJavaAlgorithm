@@ -9,5 +9,8 @@ public class CarMain2 {
 
         out.println(tico);
         out.println(pride);
+
+        tico.color = "화이트";
+        out.println(tico.color);
     }
 }
