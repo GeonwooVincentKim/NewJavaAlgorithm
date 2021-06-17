@@ -15,9 +15,28 @@ public class Lotto_Test {
             // Set random section from 0 ~ 45
             // Not the Zero-Two animation
             randomArray[i] = (int) (Math.random() * 45) + 1;
+            if (!isDuplicateValueExist(randomArray, i)) {
+                // randomArray[i] = (int) (Math.random() * 45) + 1;
+                i = checkDuplicateValue(randomArray, i);
+            }
         }
 
         return randomArray;
+    }
+
+    public static int[] getNonDuplicateArray(int[] getRandomArray) {
+        int[] nonDuplicateArray = new int[getRandomArray.length];
+
+        for (int i = 0; i < getRandomArray.length; i++) {
+            // Get the RandomArray and subsititude into the nonDuplicateArray.
+            nonDuplicateArray[i] = getRandomArray[i];
+
+            for (int j = 0; j < i; j++) {
+                i = checkDuplicateValue(nonDuplicateArray, i, j);
+            }
+        }
+
+        return nonDuplicateArray;
     }
 
     // 2. If there are duplicateValue exists in randomArray, then return false,
@@ -25,14 +44,35 @@ public class Lotto_Test {
     public static boolean isDuplicateValueExist(int[] randomArray, int randomValue) {
         boolean canInsert = true;
 
-        for (int i = 0; i < randomArray.length; i++) {
-            if (randomArray[i] == randomValue) {
+        for (int j = 0; j < randomValue; j++) {
+            if (randomArray[randomValue] == randomArray[j]) {
                 canInsert = false;
                 return canInsert;
             }
         }
 
         return canInsert;
+    }
+
+    public static int checkDuplicateValue(int[] randomArray, int i, int j) {
+        if (randomArray[j] == randomArray[j]) {
+            i--;
+        }
+
+        return i;
+    }
+
+    public static int checkDuplicateValue(int[] randomArray, int randomValue) {
+        boolean canInsert = isDuplicateValueExist(randomArray, randomValue);
+
+        int i = 0;
+        for (i = 0; i < randomValue; i++) {
+            if (canInsert == true) {
+                randomArray[i] = randomValue;
+            }
+        }
+
+        return i;
     }
 
     public static int randomArrayFrequency(int[] lottoArray, int lottoValue) {
@@ -76,6 +116,7 @@ public class Lotto_Test {
         }
 
         int[] randomArray = getRandomArray(setArrayLength);
+
         // out.println(randomArray);
         String result = printRandomArray(randomArray);
         out.println(result);
