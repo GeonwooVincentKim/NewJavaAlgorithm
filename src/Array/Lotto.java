@@ -19,13 +19,16 @@ public class Lotto {
     }
 
     public static int checkValueExist(int[] lotto, int i) {
+        int count = i;
+
         for (int j = 0; j < i; j++) {
             if (lotto[i] == lotto[j]) {
-                i--;
+                count--;
                 break;
             }
         }
-        return i;
+
+        return count;
     }
 
     public static String printRandomArray(int[] lotto) {
