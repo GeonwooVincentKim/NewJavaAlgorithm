@@ -32,6 +32,7 @@ public class Lotto_Test {
             nonDuplicateArray[i] = getRandomArray[i];
 
             for (int j = 0; j < i; j++) {
+                // for (int j = i + 1; j < getRandomArray.length; j++) {
                 i = checkDuplicateValue(nonDuplicateArray, i, j);
             }
         }
@@ -109,7 +110,6 @@ public class Lotto_Test {
         try {
             setArrayLength = sc.nextInt();
         } catch (InputMismatchException e) {
-            // e.printStackTrace();
             out.println("입력을 잘못하셨습니다 : ");
         } catch (Exception e) {
             e.printStackTrace();
@@ -117,46 +117,8 @@ public class Lotto_Test {
 
         int[] randomArray = getRandomArray(setArrayLength);
 
-        // out.println(randomArray);
         String result = printRandomArray(randomArray);
         out.println(result);
-
-        // int[] randomArray = new int[setDataLength];
-        // int getCurrentDuplicateValue = 0;
-
-        // for (int i = 0; i < setDataLength; i++) {
-        // randomArray[i] = (int) (Math.random() * 45) + 1;
-        // getCurrentDuplicateValue = randomArrayFrequency(randomArray, i);
-        // out.println(getCurrentDuplicateValue);
-        // // out.print(randomArray[i] + " ");
-        // }
-
-        // out.println();
-
-        // int getNextDuplicateValue = 0;
-
-        // for (int i = 0; i < randomArray.length; i++) {
-        // for (int j = 0; j < i; j++) {
-        // getCurrentDuplicateValue = randomArray[i];
-        // getNextDuplicateValue = randomArray[j];
-
-        // if (getCurrentDuplicateValue == getNextDuplicateValue) {
-        // i--;
-        // break;
-        // }
-
-        // // out.print(" 확인중.. ");
-        // }
-
-        // }
-
-        // int[] getRandomNum = randomArray;
-        // String printNonDuplicateArray = "";
-        // for (int i = 0; i < getRandomNum.length; i++) {
-        // printNonDuplicateArray += getRandomNum[i] + " - ";
-        // }
-
-        // out.println(printNonDuplicateArray);
 
         sc.close();
     }
