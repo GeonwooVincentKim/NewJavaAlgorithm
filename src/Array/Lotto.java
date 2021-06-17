@@ -21,18 +21,6 @@ public class Lotto {
         return lotto;
     }
 
-    public static int[] setRandomNumber(int[] randomArray) {
-        int[] lottoArray = new int[randomArray.length];
-
-        for (int i = 0; i < randomArray.length; i++) {
-            for (int j = 0; j < i; j++) {
-
-            }
-        }
-
-        return lottoArray;
-    }
-
     public static int checkValueExist(int[] lotto, int i) {
         int count = i;
 
