@@ -9,21 +9,24 @@ public class Lotto {
 
     public static int[] getRandomNumber(int lottoLength) {
         int[] lotto = new int[lottoLength];
+        out.println("First Values --> ");
+
         for (int i = 0; i < lotto.length; i++) {
             lotto[i] = setRandomRange(45);
+            i = checkValueExist(lotto, i);
             out.print(lotto[i] + " ");
         }
 
         out.println();
 
-        int[] newLottoArray = new int[lotto.length];
-        for (int i = 0; i < newLottoArray.length; i++) {
-            newLottoArray[i] = lotto[i];
-            // i = checkValueExist(newLottoArray, i);
-            if ((isValueExist(newLottoArray, i))) {
-                out.print(newLottoArray[i] + " ");
-            }
-        }
+        // int[] newLottoArray = new int[lotto.length];
+        // for (int i = 0; i < newLottoArray.length; i++) {
+        // newLottoArray[i] = lotto[i];
+        // // i = checkValueExist(newLottoArray, i);
+        // if ((isValueExist(newLottoArray, i))) {
+        // out.print(newLottoArray[i] + " ");
+        // }
+        // }
 
         return lotto;
     }
@@ -45,9 +48,15 @@ public class Lotto {
 
         for (int j = 0; j < i; j++) {
             if (lotto[i] == lotto[j]) {
-                out.println("겹치는 목록이 발생했습니다");
+                out.println("There are duplicates value exist in this array");
+                out.println("lotto[i] : " + lotto[i] + ", lotto[j] : " + lotto[j]);
+
                 count--;
-                out.print(count + " " + lotto[i] + " " + lotto[j]);
+
+                out.println();
+                out.println("Changed");
+                out.println("lotto[i] : " + lotto[i] + ", lotto[j] : " + lotto[j]);
+                // out.print(count + " " + lotto[i] + " " + lotto[j]);
                 out.println();
                 break;
             }
@@ -85,7 +94,8 @@ public class Lotto {
         int[] lotto = getRandomNumber(lottoLength);
 
         String result = printRandomArray(lotto);
-        out.println(result);
+        out.println("--> Result values");
+        out.print(result + " ");
     }
 
 }
