@@ -28,11 +28,11 @@ public class Lotto {
         return i;
     }
 
-    public static String printRandomArray(int[] randomArray) {
+    public static String printRandomArray(int[] lotto) {
         String loopResult = "";
 
-        for (int i = 0; i < randomArray.length; i++) {
-            loopResult += randomArray[i] + " ";
+        for (int i = 0; i < lotto.length; i++) {
+            loopResult += lotto[i] + " ";
         }
 
         return loopResult;
