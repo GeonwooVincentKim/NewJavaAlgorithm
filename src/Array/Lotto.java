@@ -18,16 +18,6 @@ public class Lotto {
         }
 
         out.println();
-
-        // int[] newLottoArray = new int[lotto.length];
-        // for (int i = 0; i < newLottoArray.length; i++) {
-        // newLottoArray[i] = lotto[i];
-        // // i = checkValueExist(newLottoArray, i);
-        // if ((isValueExist(newLottoArray, i))) {
-        // out.print(newLottoArray[i] + " ");
-        // }
-        // }
-
         return lotto;
     }
 
