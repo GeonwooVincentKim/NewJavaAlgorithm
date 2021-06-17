@@ -19,8 +19,10 @@ public class Lotto {
         int[] newLottoArray = new int[lotto.length];
         for (int i = 0; i < newLottoArray.length; i++) {
             newLottoArray[i] = lotto[i];
-            i = checkValueExist(newLottoArray, i);
-            out.print(newLottoArray[i] + " ");
+            // i = checkValueExist(newLottoArray, i);
+            if ((isValueExist(newLottoArray, i))) {
+                out.print(newLottoArray[i] + " ");
+            }
         }
 
         return lotto;
@@ -53,6 +55,19 @@ public class Lotto {
         }
 
         return count;
+    }
+
+    public static boolean isValueExist(int[] lotto, int lottoValue) {
+        boolean canInsert = true;
+
+        for (int i = 0; i < lottoValue; i++) {
+            if (lotto[i] == lottoValue) {
+                canInsert = false;
+                return canInsert;
+            }
+        }
+
+        return canInsert;
     }
 
     public static String printRandomArray(int[] lotto) {
