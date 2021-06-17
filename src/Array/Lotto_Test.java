@@ -106,14 +106,7 @@ public class Lotto_Test {
         out.print("랜덤 수를 출력할 데이터의 개수를 입력하세요 : ");
 
         int setArrayLength = 0;
-
-        try {
-            setArrayLength = sc.nextInt();
-        } catch (InputMismatchException e) {
-            out.println("입력을 잘못하셨습니다 : ");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        setArrayLength = getUserInput(sc, setArrayLength);
 
         int[] randomArray = getRandomArray(setArrayLength);
 
@@ -121,5 +114,16 @@ public class Lotto_Test {
         out.println(result);
 
         sc.close();
+    }
+
+    private static int getUserInput(Scanner sc, int setArrayLength) {
+        try {
+            setArrayLength = sc.nextInt();
+        } catch (InputMismatchException e) {
+            out.println("입력을 잘못하셨습니다 : ");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return setArrayLength;
     }
 }
