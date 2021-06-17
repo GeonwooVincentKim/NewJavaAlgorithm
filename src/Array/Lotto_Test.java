@@ -6,7 +6,20 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Lotto_Test {
-    // 1. Get determined ArrayLength from User-input for setting arrayLength.
+    // 1. Get the Array Length from User-Input and substitude into the
+    // `setArrayLength`.
+    public static int extracted(Scanner sc, int setArrayLength) {
+        try {
+            setArrayLength = sc.nextInt();
+        } catch (InputMismatchException e) {
+            out.println("입력을 잘못하셨습니다 : ");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return setArrayLength;
+    }
+
+    // 2. Get determined ArrayLength from User-input for setting arrayLength.
     // And add random values into the array.
     public static int[] getRandomArray(int setArrayLength) {
         int[] randomArray = new int[setArrayLength];
@@ -15,38 +28,21 @@ public class Lotto_Test {
             // Set random section from 0 ~ 45
             // Not the Zero-Two animation
             randomArray[i] = (int) (Math.random() * 45) + 1;
-            if (!isDuplicateValueExist(randomArray, i)) {
-                // randomArray[i] = (int) (Math.random() * 45) + 1;
-                i = checkDuplicateValue(randomArray, i);
-            }
+            // if (!isDuplicateValueExist(randomArray, i)) {
+            i = checkDuplicateValue(randomArray, i);
+            // }
         }
 
         return randomArray;
     }
 
-    public static int[] getNonDuplicateArray(int[] getRandomArray) {
-        int[] nonDuplicateArray = new int[getRandomArray.length];
-
-        for (int i = 0; i < getRandomArray.length; i++) {
-            // Get the RandomArray and subsititude into the nonDuplicateArray.
-            nonDuplicateArray[i] = getRandomArray[i];
-
-            for (int j = 0; j < i; j++) {
-                // for (int j = i + 1; j < getRandomArray.length; j++) {
-                i = checkDuplicateValue(nonDuplicateArray, i, j);
-            }
-        }
-
-        return nonDuplicateArray;
-    }
-
-    // 2. If there are duplicateValue exists in randomArray, then return false,
+    // 3. If there are duplicateValue exists in randomArray, then return false,
     // otherwise, return true that the user can add the new data in the randomArray.
-    public static boolean isDuplicateValueExist(int[] randomArray, int randomValue) {
+    public static boolean isDuplicateValueExist(int[] randomArray, int i) {
         boolean canInsert = true;
 
-        for (int j = 0; j < randomValue; j++) {
-            if (randomArray[randomValue] == randomArray[j]) {
+        for (int j = 0; j < i; j++) {
+            if (randomArray[i] == randomArray[j]) {
                 canInsert = false;
                 return canInsert;
             }
@@ -56,24 +52,33 @@ public class Lotto_Test {
     }
 
     public static int checkDuplicateValue(int[] randomArray, int i, int j) {
-        if (randomArray[j] == randomArray[j]) {
+        if (randomArray[j] == randomArray[i]) {
             i--;
         }
 
         return i;
     }
 
-    public static int checkDuplicateValue(int[] randomArray, int randomValue) {
-        boolean canInsert = isDuplicateValueExist(randomArray, randomValue);
+    // 4. If the value duplicates true after execute `isDuplicateValueExist`
+    // function, then compare between randomArray[i] and randomArray[j].
+    // And count out the `i` value to delete duplicate value in the `randomArray`.
+    public static int checkDuplicateValue(int[] randomArray, int i) {
+        int count = i;
 
-        int i = 0;
-        for (i = 0; i < randomValue; i++) {
-            if (canInsert == true) {
-                randomArray[i] = randomValue;
+        for (int j = 0; j < i; j++) {
+            if (randomArray[j] == randomArray[i]) {
+                out.println();
+                out.println("getRandomArray[i] : " + randomArray[i] + ", getRandomArray[j]" + randomArray[j]);
+
+                i--;
+
+                out.println();
+                out.println("getRandomArray[i] : " + randomArray[i] + ", getRandomArray[j]" + randomArray[j]);
+                break;
             }
         }
 
-        return i;
+        return count;
     }
 
     public static int randomArrayFrequency(int[] lottoArray, int lottoValue) {
@@ -88,7 +93,7 @@ public class Lotto_Test {
         return count;
     }
 
-    // 3. Print the value of Random-Array
+    // 5. Print the value of Random-Array
     public static String printRandomArray(int[] randomArray) {
         String printResult = "";
 
@@ -100,13 +105,13 @@ public class Lotto_Test {
     }
 
     public static void main(String[] args) {
-        // out.println();
         Scanner sc = new Scanner(System.in);
 
         out.print("랜덤 수를 출력할 데이터의 개수를 입력하세요 : ");
 
         int setArrayLength = 0;
-        setArrayLength = getUserInput(sc, setArrayLength);
+
+        setArrayLength = extracted(sc, setArrayLength);
 
         int[] randomArray = getRandomArray(setArrayLength);
 
@@ -114,16 +119,5 @@ public class Lotto_Test {
         out.println(result);
 
         sc.close();
-    }
-
-    private static int getUserInput(Scanner sc, int setArrayLength) {
-        try {
-            setArrayLength = sc.nextInt();
-        } catch (InputMismatchException e) {
-            out.println("입력을 잘못하셨습니다 : ");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return setArrayLength;
     }
 }
