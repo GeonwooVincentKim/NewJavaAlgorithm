@@ -14,6 +14,10 @@ public class AnnotationExample {
 
             String methodName = method[i].getName();
             out.println(methodName);
+
+            out.println(method[i].getAnnotation(UserAnnot.class));
+            UserAnnot annot = method[i].getAnnotation(UserAnnot.class);
+            out.println(annot);
         }
     }
 }
