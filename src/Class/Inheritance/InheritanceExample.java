@@ -5,7 +5,7 @@ import static java.lang.System.out;
 class Parent {
     Parent() {
         this(1);
-        out.print("(1) -> Parent Class Initializer without parameter");
+        out.print("(1) -> Parent Class Initializer without Parameter");
         out.println();
     }
 
@@ -20,7 +20,7 @@ class Parent {
     // Parent() {
     // this(1);
     // this("String");
-    // out.print("(1) -> Parent Class Initializer without parameter");
+    // out.print("(1) -> Parent Class Initializer without Parameter");
     // out.println();
     // }
 
@@ -32,13 +32,36 @@ class Parent {
 
     Parent(String stringParameter) {
         out.print("(2-1) -> Parent Class Initializer with String Parameter");
+        out.println();
+    }
+}
+
+class Child extends Parent {
+    Child() {
+        this(1);
+        out.print("(3) -> Child Class Initializer without Parameter");
+    }
+
+    Child(int childIntParameter) {
+        this("String2");
+        out.print("(4) -> Child Class Initializer with Integer Parameter");
+        out.println();
+    }
+
+    Child(String childStringParameter) {
+        out.print("(4-1) -> Child Class Initializer with String Parameter");
+        out.println();
     }
 }
 
 public class InheritanceExample {
     public static void main(String[] args) {
+        // out.println();
+        // Parent p = new Parent();
+        // out.println(p);
+
         out.println();
-        Parent p = new Parent();
-        out.println(p);
+        Child c = new Child();
+        out.println(c);
     }
 }
