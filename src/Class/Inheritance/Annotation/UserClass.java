@@ -7,4 +7,9 @@ public class UserClass {
     public void methodA() {
         out.println("MethodA() 실행");
     }
+
+    @UserAnnot(value = "B", number = 10)
+    public void methodB() {
+        out.println("MethodB() 실행");
+    }
 }

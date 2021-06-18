@@ -18,6 +18,17 @@ public class AnnotationExample {
             out.println(method[i].getAnnotation(UserAnnot.class));
             UserAnnot annot = method[i].getAnnotation(UserAnnot.class);
             out.println(annot);
+
+            out.println();
+            out.print(methodName + " 의 Annotation");
+            out.println();
+            out.print("value : " + annot.value() + " ");
+            out.println();
+
+            out.print("number : " + annot.number() + " ");
+            out.println();
+
+            method[i].invoke(new UserClass(), null);
         }
     }
 }
