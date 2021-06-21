@@ -27,7 +27,7 @@ public class ClassTestExample {
         String b = "서울";
 
         if (a == b) {
-            out.println("두 문자열의 값은 서로 같습니다");
+            out.println("바로 값을 집어넣은 두 문자열의 값은 서로 같습니다");
         } else {
             out.println("두 문자열의 값은 서로 같지 않습니다");
         }
@@ -40,7 +40,7 @@ public class ClassTestExample {
         if (a1 == b1) {
             out.println("두 문자열의 주소는 서로 같습니다.");
         } else if (a1.equals(b1)) {
-            out.println("두 문자열의 값은 서로 같습니다.");
+            out.println("할당된 문자열인 두 값은 서로 같습니다!!!");
         } else {
             out.println("두 문자열의 값 또는 주소는 서로 같지 않습니다");
         }
