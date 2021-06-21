@@ -28,7 +28,7 @@ public class AnnotationExample {
             out.print("number : " + annot.number() + " ");
             out.println();
 
-            method[i].invoke(new UserClass(), null);
+            // method[i].invoke(new UserClass(), null);
         }
     }
 }
