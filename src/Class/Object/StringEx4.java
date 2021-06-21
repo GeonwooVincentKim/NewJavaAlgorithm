@@ -17,5 +17,16 @@ public class StringEx4 {
         for (int i = 0; i < stringArray.length; i++) {
             out.println(i + " 번 Index 값 = " + stringArray[i]);
         }
+
+        out.println();
+
+        char[] charArray = new char[text.length()];
+        // char[] charArray = text.toCharArray();
+
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[i] = text.charAt(i);
+            out.println(i + " 번 Index (char[]) 의 값 = " + charArray[i]);
+        }
+
     }
 }
