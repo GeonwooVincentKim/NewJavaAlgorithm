@@ -12,13 +12,6 @@ public class StringBuffer {
         String str = "";
         for (int i = 0; i < 1000000; i++) {
             str += i;
-            out.println(i + " 초");
-
-            try {
-
-            } catch (Exception e) {
-                out.println("");
-            }
         }
 
         out.print(str);
