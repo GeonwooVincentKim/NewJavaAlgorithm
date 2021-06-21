@@ -13,6 +13,20 @@ public class ReTryCatch {
     }
 
     static void first() throws Exception {
-        out.println(4 / 0);
+        try {
+            second();
+        } catch (Exception e) {
+            out.println("first() 예외 처리");
+            throw e;
+        }
+    }
+
+    static void second() throws Exception {
+        try {
+            throw new Exception("예외 발생");
+        } catch (Exception e) {
+            out.println("second() 예외 처리");
+            throw e;
+        }
     }
 }
