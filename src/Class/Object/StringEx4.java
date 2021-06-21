@@ -31,6 +31,13 @@ public class StringEx4 {
         // char[] charArray = new char[text.length()];
         // char[] charArray = text.toCharArray();
         char[] charArray = charText.toCharArray();
+
+        for (int i = 0; i < charArray.length; i++) {
+            out.print(charArray[i] + " ");
+        }
+
+        out.println();
+
         String getCharArray = String.valueOf(charArray);
 
         String[] convertStringArray = getCharArray.split(" ");
