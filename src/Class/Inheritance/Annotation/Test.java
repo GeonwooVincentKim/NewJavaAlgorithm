@@ -15,16 +15,6 @@ public class Test {
         return pastaCost;
     }
 
-    // public static String printPastaCost(int[] pastaArray) {
-    // String pastaLoop = "";
-
-    // for (int i = 0; i < pastaArray.length; i++) {
-    // pastaLoop += pastaArray[i] + " ";
-    // }
-
-    // return pastaLoop;
-    // }
-
     public static int[] getJuiceCost(Scanner sc, int juice) {
         int[] juiceCost = new int[juice];
 
@@ -34,16 +24,6 @@ public class Test {
 
         return juiceCost;
     }
-
-    // public static String printJuiceCost(int[] juiceArray) {
-    // String juiceLoop = "";
-
-    // for (int i = 0; i < juiceArray.length; i++) {
-    // juiceLoop += juiceArray[i] + " ";
-    // }
-
-    // return juiceLoop;
-    // }
 
     public static double getMinimumCost(int[] pastaCost, int[] juiceCost, double min) {
         int sum = 0;
