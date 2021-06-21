@@ -25,10 +25,7 @@ public class UserInputTryCatch {
         try {
             second(sc, userInput);
         } catch (NumberFormatException e) {
-            out.println("메인으로 떠넘기는 에러입니다..");
-            throw e;
-        } catch (InputMismatchException e) {
-            out.println("메인으로 떠넘기는 에러입니다..");
+            out.println("메인으로 떠넘기는 에러입니다!!!");
             throw e;
         }
     }
