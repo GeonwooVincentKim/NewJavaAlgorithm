@@ -25,3 +25,12 @@ Getting start with `Regular-Expression` when you use `Java`, `Python`, `C++`, `C
 - `{n}` -> `n` Characters
 - `{n,}` -> Characters more than `n`
 - `{n,m}` -> Characters from `n` to `m`
+
+### Basic `Regular-Expression` pattern
+
+- `[a-z]?` -> `One LowerCase` Character
+- `[0-9]+` -> More than `one LowerCase` Character
+- `0[1-9]*` -> The `Number` starting from `0`
+- `^[0-9]` -> Starting from `Number`
+- `[^0-9]` -> Character which is `not number`
+- `[a-z*]` -> `LowerCase Character` more than `0`
