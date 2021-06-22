@@ -1,4 +1,4 @@
-package Class.Object;
+package Class.Object.Test;
 
 public class Car {
     String name;
