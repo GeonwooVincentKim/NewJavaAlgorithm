@@ -11,8 +11,10 @@ public class RegaxExample3 {
                 + " 계좌번호:123-12-123456";
         out.println(source);
 
-        // The first index range was `1 to 2`, but it changed `1 to 9`
-        String telPattern = "(0\\d{1,9})-(\\d{3,4})-(\\d{4})";
+        // First Index -> 0 + (The length of Number is 1 to 2)
+        // Second Index -> Number length have 3 to 4
+        // Third Index -> Can get the number-length which has 4 length Number
+        String telPattern = "(0\\d{1,2})-(\\d{3,4})-(\\d{4})";
         out.println(telPattern);
 
         String emailPattern = "(\\w+)@(\\w+).(\\w+)";
@@ -56,5 +58,17 @@ public class RegaxExample3 {
         out.println();
         out.println("----------------------------------------------------");
         out.println();
+
+        // Account
+        p = Pattern.compile(accountPattern);
+        m = p.matcher(source);
+        out.println(m);
+
+        out.println();
+
+        out.println("계좌번호 : ");
+        while (m.find()) {
+            out.println(m.group() + " : " + m.group(1) + "," + m.group(2) + "," + m.group(3));
+        }
     }
 }
