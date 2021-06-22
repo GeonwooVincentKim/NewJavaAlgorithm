@@ -16,7 +16,7 @@ public class RegaxExample2 {
 
         // for (String d : datas) {
         for (int i = 0; i < datas.length; i++) {
-            out.println(datas[i] + " -> 문자와 일치하는 패턴 : ");
+            out.print(datas[i] + " -> 문자와 일치하는 패턴 : ");
 
             // for (String p : patterns) {
             for (int j = 0; j < patterns.length; j++) {
@@ -28,6 +28,8 @@ public class RegaxExample2 {
                 }
 
             }
+
+            out.println();
         }
     }
 }
