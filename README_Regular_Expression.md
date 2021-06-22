@@ -2,9 +2,10 @@
 
 Getting start with `Regular-Expression` when you use `Java`, `Python`, `C++`, `C#`, or other languages.
 
-## How to use Regular-Expression
 
-### Basic Character when you trying to use `Regular-Expression`
+# How to use Regular-Expression
+
+## Basic Character when you trying to use `Regular-Expression`
 
 - `.` -> `One` Character
 - `?` -> `No` Charcter or only `one` Character
@@ -16,7 +17,7 @@ Getting start with `Regular-Expression` when you use `Java`, `Python`, `C++`, `C
 - `|` -> `or`
 - `&` -> `and`
 - `()` -> `Grouping`
-- `\s` -> `One Blank`
+- `\s` -> `One Blank` 
 - `\S` -> Character which is `not blank`
 - `\d` -> `Number`
 - `\D` -> Character which is `not number`
@@ -26,7 +27,7 @@ Getting start with `Regular-Expression` when you use `Java`, `Python`, `C++`, `C
 - `{n,}` -> Characters more than `n`
 - `{n,m}` -> Characters from `n` to `m`
 
-### Basic `Regular-Expression` pattern
+## Basic `Regular-Expression` pattern
 
 - `[a-z]?` -> `One LowerCase` Character
 - `[0-9]+` -> More than `one LowerCase` Character
@@ -34,3 +35,10 @@ Getting start with `Regular-Expression` when you use `Java`, `Python`, `C++`, `C
 - `^[0-9]` -> Starting from `Number`
 - `[^0-9]` -> Character which is `not number`
 - `[a-z*]` -> `LowerCase Character` more than `0`
+- `[a-z]+` -> `LowerCase Character` more than `1`
+- `02|010` -> `02` or `010`
+- `\s` -> `Blank`
+- `\S` -> Number which is `not Blank`
+- `\d` -> `Number`
+- `\w` -> `Equals` to Number and Character `[a-zA-Z0-9]` `not Special-Symbols`
+- `\W` -> `Special-Symbols`.
