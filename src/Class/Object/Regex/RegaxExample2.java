@@ -18,12 +18,13 @@ public class RegaxExample2 {
         for (int i = 0; i < datas.length; i++) {
             out.println(datas[i] + " -> 문자와 일치하는 패턴 : ");
 
-            for (String p : patterns) {
-                Pattern pattern = Pattern.compile(p);
+            // for (String p : patterns) {
+            for (int j = 0; j < patterns.length; j++) {
+                Pattern pattern = Pattern.compile(patterns[j]);
                 Matcher m = pattern.matcher(datas[i]);
 
                 if (m.matches()) {
-                    out.print(p + ", ");
+                    out.print(patterns[j] + ", ");
                 }
 
             }
