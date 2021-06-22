@@ -2,6 +2,9 @@ package Collections.List.ArrayList;
 
 import static java.lang.System.out;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class ArrayListExample {
     public static void main(String[] args) {
 
@@ -16,6 +19,7 @@ public class ArrayListExample {
 
         for (int i = 0; i < customArrayList.size(); i++) {
             out.println(customArrayList.get(i));
+            out.println(customArrayList.getIndex());
         }
     }
 }
