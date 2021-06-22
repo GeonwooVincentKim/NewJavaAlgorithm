@@ -21,6 +21,7 @@ public class RegaxExample3 {
         String accountPattern = "(\\d{3})-(\\d{2})-(\\d{6})";
         out.println(accountPattern);
 
+        // Phone-Number
         Pattern p = Pattern.compile(telPattern);
         Matcher m = p.matcher(source);
         out.println(m);
@@ -29,5 +30,8 @@ public class RegaxExample3 {
         while (m.find()) {
             out.println(m.group() + " : " + m.group(1) + "," + m.group(2) + "," + m.group(3));
         }
+
+        // Email
+        p = Pattern.compile(emailPattern);
     }
 }
