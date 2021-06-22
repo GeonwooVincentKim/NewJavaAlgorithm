@@ -7,12 +7,10 @@ import java.util.regex.Pattern;
 
 public class RegexExample {
     public static void main(String[] args) {
-        // Rule for that the lower-case of alphabet starting from `b` and has over 0
+        // Rule for that the lower-case of alphabet starting from `b` and have more than
+        // 0
         Pattern p = Pattern.compile("b[a-z]*");
         out.println(p);
-
-        Pattern p1 = Pattern.compile("c[a-z]*");
-        out.println(p1);
 
         // Check Character-Sequence(String), "bat"
         Matcher m;
@@ -24,5 +22,15 @@ public class RegexExample {
         m = p.matcher("cat");
         out.println(m);
         out.println("cat = " + m.matches());
+
+        // Check Character-Sequence(String), "bed"
+        m = p.matcher("bed");
+        out.println(m);
+        out.println("bed = " + m.matches());
+
+        // Rule for that the lower-case of alphabet starting from `c` and have more than
+        // 0
+        Pattern p1 = Pattern.compile("c[a-z]*");
+        out.println(p1);
     }
 }
