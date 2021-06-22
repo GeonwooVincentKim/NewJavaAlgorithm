@@ -28,9 +28,22 @@ public class RegexExample {
         out.println(m);
         out.println("bed = " + m.matches());
 
+        out.println("-------------------------------------------");
+
         // Rule for that the lower-case of alphabet starting from `c` and have more than
         // 0
         Pattern p1 = Pattern.compile("c[a-z]*");
         out.println(p1);
+
+        // Chcek Character-Sequence(String), "cat"
+        Matcher m1;
+        m1 = p1.matcher("cat");
+        out.println(m1);
+        out.println("cat = " + m1.matches());
+
+        // Check Character-Sequence(String), "dolphin"
+        m1 = p1.matcher("dolphin");
+        out.println(m1);
+        out.println("dolphin = " + m1.matches());
     }
 }
