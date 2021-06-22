@@ -21,17 +21,40 @@ public class RegaxExample3 {
         String accountPattern = "(\\d{3})-(\\d{2})-(\\d{6})";
         out.println(accountPattern);
 
+        out.println();
+        out.println("----------------------------------------------------");
+        out.println();
+
         // Phone-Number
         Pattern p = Pattern.compile(telPattern);
         Matcher m = p.matcher(source);
         out.println(m);
+
+        out.println();
 
         out.println("전화번호 : ");
         while (m.find()) {
             out.println(m.group() + " : " + m.group(1) + "," + m.group(2) + "," + m.group(3));
         }
 
+        out.println();
+        out.println("----------------------------------------------------");
+        out.println();
+
         // Email
         p = Pattern.compile(emailPattern);
+        m = p.matcher(source);
+        out.println(m);
+
+        out.println();
+
+        out.println("이메일 : ");
+        while (m.find()) {
+            out.println(m.group() + " : " + m.group(1) + "," + m.group(2) + "," + m.group(3));
+        }
+
+        out.println();
+        out.println("----------------------------------------------------");
+        out.println();
     }
 }
