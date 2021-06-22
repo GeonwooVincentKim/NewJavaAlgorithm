@@ -1,4 +1,4 @@
-package Class.Vector;
+package Collections.Map.Vector;
 
 public class CustomVector {
     public static final int DEFAULT_SIZE = 10;
