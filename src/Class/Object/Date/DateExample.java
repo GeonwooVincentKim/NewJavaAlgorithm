@@ -30,5 +30,8 @@ public class DateExample {
 
         out.println("--------------------------------------------");
 
+        SimpleDateFormat simpleDateFormat4 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss E요일 a");
+        out.println(simpleDateFormat4);
+        out.println(simpleDateFormat4.format(now));
     }
 }
