@@ -4,6 +4,18 @@ import static java.lang.System.out;
 
 public class ArrayListExample {
     public static void main(String[] args) {
-        out.println();
+
+        CustomArrayList customArrayList = new CustomArrayList();
+        out.println(customArrayList);
+
+        customArrayList.add("Test");
+        customArrayList.add("Exam");
+        customArrayList.add("Print");
+
+        customArrayList.add(1, "No Test");
+
+        for (int i = 0; i < customArrayList.size(); i++) {
+            out.println(customArrayList.get(i));
+        }
     }
 }
