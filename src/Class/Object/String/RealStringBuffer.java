@@ -1,4 +1,4 @@
-package Class.Object;
+package Class.Object.String;
 
 import static java.lang.System.out;
 
