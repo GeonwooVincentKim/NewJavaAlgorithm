@@ -13,9 +13,12 @@ public class StringArrayToString {
 
         out.println();
 
-        // int ageSum = 0;
+        int ageSum = 0;
         for (int i = 0; i < member.length; i++) {
             out.println(member[i].split(",")[2]);
+            ageSum += Integer.parseInt(member[i].split(",")[2]);
         }
+
+        out.println("평균 나이 : " + (double) ageSum / member.length);
     }
 }
