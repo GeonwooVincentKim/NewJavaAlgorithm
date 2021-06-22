@@ -2,7 +2,7 @@ package Class.Object;
 
 import static java.lang.System.out;
 
-public class StringBuffer {
+public class StringBufferTest {
     public static void main(String[] args) {
         out.println();
 
@@ -12,6 +12,7 @@ public class StringBuffer {
         String str = "";
         for (int i = 0; i < 1000000; i++) {
             str += i;
+            out.println(i);
         }
 
         out.print(str);
