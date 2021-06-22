@@ -16,8 +16,19 @@ public class DateExample {
         out.println(simpleDateFormat);
         out.println(simpleDateFormat.format(now));
 
+        out.println("--------------------------------------------");
+
         SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
         out.println(simpleDateFormat2);
         out.println(simpleDateFormat2.format(now));
+
+        out.println("--------------------------------------------");
+
+        SimpleDateFormat simpleDateFormat3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        out.println(simpleDateFormat3);
+        out.println(simpleDateFormat3.format(now));
+
+        out.println("--------------------------------------------");
+
     }
 }
