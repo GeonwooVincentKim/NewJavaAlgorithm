@@ -5,32 +5,12 @@ import static java.lang.System.out;
 import java.util.Scanner;
 
 public class CustomArrayExample {
-    // Check index is exist in array
-    public static int isIndexOf(int[] getArray, int index) {
-        for (int i = 0; i < getArray.length; i++) {
-            if (getArray[i] == index) {
-                return i;
-            }
-        }
-        return -1;
-    }
+    public static int swapArray(int[] getArray, int i, int j) {
+        int temp = getArray[i];
+        getArray[i] = getArray[j];
+        getArray[j] = temp;
 
-    // Check how many times does the same index iterate
-    public static int arrayFrequency(int[] getArray, int index) {
-        int count = 0;
-
-        for (int i = 0; i < getArray.length; i++) {
-            if (getArray[i] == index) {
-                count++;
-            }
-        }
-
-        return count;
-    }
-
-    // Display Array Size
-    public static int getArraySize(int[] getArray) {
-        return getArray.length;
+        return temp;
     }
 
     public static void main(String[] args) {
@@ -48,7 +28,7 @@ public class CustomArrayExample {
             originalArray[i] = (int) (Math.random() * (50 - 10 + 1)) + 10;
         }
 
-        for (int i = 0; i < getArraySize(originalArray); i++) {
+        for (int i = 0; i < NewCustomArrayList.getArraySize(originalArray); i++) {
             out.print(originalArray[i] + " ");
         }
 
@@ -64,7 +44,41 @@ public class CustomArrayExample {
             }
         }
 
+        int getCurrentValue = 0;
+        int getNextValue = 0;
+        int getCurrentCount = 0;
+        int getNextCount = 0;
+
+        int[] getSortedArray = new int[countArray.length];
         if (includeFrequency == 1) {
+            for (int i = 0; i < countArray.length; i++) {
+                for (int j = i + 1; i < countArray.length; j++) {
+                    getCurrentValue = countArray[i];
+                    getNextValue = countArray[j];
+                    getCurrentCount = NewCustomArrayList.arrayFrequency(originalArray, getCurrentValue);
+                    getNextCount = NewCustomArrayList.arrayFrequency(originalArray, getNextValue);
+
+                    if (getCurrentCount < getNextCount) {
+                        swapArray(originalArray, i, j);
+                        swapArray(countArray, i, j);
+
+                        getSortedArray[i] = countArray[i];
+                    } else if (getCurrentCount == getNextCount && countArray[i] < countArray[j]) {
+                        swapArray(originalArray, i, j);
+                        swapArray(countArray, i, j);
+
+                        getSortedArray[i] = countArray[i];
+                    }
+                }
+            }
+
+            out.println();
+
+            for (int i = 0; i < 20; i++) {
+                // out.println("#" + (i + 1) + " " + getSortedArray[i] + " ("
+                // + NewCustomArrayList.arrayFrequency(originalArray, countArray[i]) + ")" +
+                // "\n");
+            }
 
         } else if (includeFrequency == 2) {
             for (int i = 0; i < countArray.length; i++) {
