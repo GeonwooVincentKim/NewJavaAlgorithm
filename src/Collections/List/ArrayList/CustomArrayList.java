@@ -1,16 +1,16 @@
 package Collections.List.ArrayList;
 
-import static java.lang.System.out;
+// import static java.lang.System.out;
 
 public class CustomArrayList {
     private Object[] array = new Object[100];
     private int index;
-    private int size = 10;
-    private boolean isEmpty;
-    private static final int DEFAULT_SIZE = 10;
+    private int size = 0;
+    // private boolean isEmpty;
+    // private static final int DEFAULT_SIZE = 10;
 
     public CustomArrayList() {
-        this.size = DEFAULT_SIZE;
+        // this.size = DEFAULT_SIZE;
     }
 
     public CustomArrayList(int arrayLength) {
@@ -19,9 +19,9 @@ public class CustomArrayList {
         this.setIndex(index);
     }
 
-    public static int getDefaultSize() {
-        return DEFAULT_SIZE;
-    }
+    // public static int getDefaultSize() {
+    // return DEFAULT_SIZE;
+    // }
 
     public int getSize() {
         return size;
@@ -55,7 +55,7 @@ public class CustomArrayList {
     // When the Index element is not lastIndex, but trying to insert between element
     // and elements
     public boolean add(int index, Object element) {
-        for (int i = size; i >= index; i--) {
+        for (int i = size - 1; i >= index; i--) {
             array[i + 1] = array[i];
         }
 
@@ -67,38 +67,63 @@ public class CustomArrayList {
 
     // When the Index element is lastIndex of the Array
     public boolean add(Object element) {
-        array[index] = element;
+        // Get the element that the newly added, and add into last element of array
+        array[size] = element;
         size++;
 
         return true;
     }
 
     public Object get(int i) {
-        if (i > this.index) {
-            out.println("Invalid");
-            return null;
-        } else if (this.isEmpty) {
-            return null;
-        } else {
-            return this.array[i];
-        }
-    }
-
-    public int size() {
-        return size;
+        return array[i];
     }
 
     public boolean isEmpty() {
         return (this.index == 0);
     }
 
-    public Object remove(int i) {
-        Object returnO = this.array[i];
-        for (int j = i; j < this.index - 1; j++) {
-            this.array[j] = this.array[j + 1];
+    // public boolean isContain(Object element, int index) {
+    public boolean isContain(Object element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int arrayFrequency(Object element, int index) {
+        // public int arrayFrequency(Object element) {
+        int count = 0;
+
+        for (int i = 0; i < size; i++) {
+            if (element == array[index]) {
+                count++;
+            }
         }
 
-        this.index--;
-        return returnO;
+        return count;
+    }
+
+    public int arraysIndexOf(Object element, int index) {
+        for (int i = 0; i < size; i++) {
+            if (element == array[index]) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public Object remove(int index) {
+        Object removeIndex = array[index];
+
+        for (int i = index + 1; i <= size - 1; i++) {
+            array[i - 1] = array[i];
+        }
+
+        size--;
+        array[size] = null;
+        return removeIndex;
     }
 }
