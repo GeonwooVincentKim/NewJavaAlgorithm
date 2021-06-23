@@ -39,12 +39,10 @@ public class NewCustomArrayList {
     }
 
     // Swap the position of index of array
-    public static int swapArray(int[] getArray, int i, int j) {
+    public static void swapArray(int[] getArray, int i, int j) {
         int temp = getArray[i];
         getArray[i] = getArray[j];
         getArray[j] = temp;
-
-        return temp;
     }
 
     // Display Array Size
