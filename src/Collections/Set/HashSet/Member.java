@@ -1,4 +1,4 @@
-package Collections.Set;
+package Collections.Set.HashSet;
 
 public class Member {
     String name;
