@@ -39,7 +39,8 @@ public class CustomArrayExample {
 
         int arrayLength = sc.nextInt();
 
-        // out.println("빈도 값을 포함하시겠습니까?? ");
+        out.println("빈도 값도 함께 정렬할까요??\n1. 네\n2. 아니오");
+        int includeFrequency = sc.nextInt();
 
         int[] originalArray = new int[arrayLength];
 
@@ -63,11 +64,30 @@ public class CustomArrayExample {
             }
         }
 
-        // for (int i = 0; i < countArray.length; i++) {
-        // for (int j = i + 1; j < countArray.length; j++) {
+        if (includeFrequency == 1) {
 
-        // }
-        // }
+        } else if (includeFrequency == 2) {
+            for (int i = 0; i < countArray.length; i++) {
+                for (int j = i + 1; j < countArray.length; j++) {
+                    if (countArray[i] < countArray[j]) {
+                        int temp = countArray[i];
+                        countArray[i] = countArray[j];
+                        countArray[j] = temp;
+                    }
+                }
+            }
+
+            out.println();
+
+            for (int i = 0; i < countArray.length; i++) {
+                out.print(countArray[i] + " ");
+            }
+
+        } else
+
+        {
+            System.exit(0);
+        }
 
         sc.close();
     }
