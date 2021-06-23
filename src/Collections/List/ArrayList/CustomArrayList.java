@@ -84,13 +84,23 @@ public class CustomArrayList {
 
     // public boolean isContain(Object element, int index) {
     public boolean isContain(Object element) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == element) {
+        for (int i = 0; i < size; i++) {
+            if (element == array[index]) {
                 return true;
             }
         }
         return false;
     }
+
+    // public boolean isContain(Object element, int index) {
+    // for (int i = 0; i < size; i++) {
+    // if (element == array[index]) {
+    // return true;
+    // }
+    // }
+
+    // return false;
+    // }
 
     public int arrayFrequency(Object element, int index) {
         // public int arrayFrequency(Object element) {

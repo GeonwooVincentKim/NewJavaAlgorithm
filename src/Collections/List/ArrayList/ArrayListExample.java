@@ -32,21 +32,16 @@ public class ArrayListExample {
             // }
         }
 
-        out.println();
+        out.println("------------------------------------");
 
         CustomArrayList newCustomArrayList = new CustomArrayList();
         for (int i = 0; i < customArrayList.getSize(); i++) {
-            if (!newCustomArrayList.isContain(customArrayList)) {
+            if (!customArrayList.isContain(newCustomArrayList.get(i))) {
+                // out.println(customArrayList.get(i));
                 newCustomArrayList.add(customArrayList.get(i));
                 // out.println("흠...");
-                // out.println(newCustomArrayList.get(i));
+                out.println(newCustomArrayList.get(i));
             }
-        }
-
-        out.println();
-
-        for (int i = 0; i < customArrayList.getSize(); i++) {
-            out.println(newCustomArrayList.get(i));
         }
 
         int arraySize = customArrayList.getSize();
