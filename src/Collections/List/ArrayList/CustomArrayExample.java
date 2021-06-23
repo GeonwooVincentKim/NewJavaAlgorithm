@@ -56,10 +56,15 @@ public class CustomArrayExample {
         int getNextCount = 0;
 
         for (int i = 0; i < countArray.length; i++) {
-
             for (int j = i + 1; j < countArray.length; j++) {
                 getCurrentValue = countArray[i];
                 getNextValue = countArray[j];
+
+                // if (getCurrentValue < getNextValue) {
+                // int temp = getCurrentValue;
+                // getCurrentValue = getNextValue;
+                // getNextValue = temp;
+                // }
 
                 getCurrentCount = NewCustomArrayList.arrayFrequency(originalArray, getCurrentValue);
                 getNextCount = NewCustomArrayList.arrayFrequency(originalArray, getNextValue);
@@ -100,20 +105,33 @@ public class CustomArrayExample {
 
         int arrayLength = sc.nextInt();
 
-        // out.println("빈도 값도 함께 정렬할까요??\n1. 네\n2. 아니오");
-        // int includeFrequency = sc.nextInt();
-
+        // Get the Random Number and store into the Original Array.
+        // Random Number has range from minimum value to maximum value.
         int[] originalArray = getRandomArray(arrayLength);
+
+        // Print the randomize-Array
         String loopResult = printRandomArray(originalArray);
-        // out.println(loopResult);
 
+        // Compare between OriginalArray and CountArray,
+        // If there is no duplicate index, or the index even duplicate but shown in
+        // first time, then saves into the countArray.
         int[] countArray = getCountArray(originalArray);
-        int[] sortArray = getSortArray(originalArray, countArray);
 
+        // Get the Original-Array and Count-Array, and then compare them.
+        // If there are duplicates index(or values), saves into the `count` variable to
+        // count how many times does the same number duplicates and then saves into the
+        // `sortArray`.
+
+        // Otherwise if there is no duplicate number in the array,
+        // then saves directly into the `sortArray`.
+        int[] sortArray = getSortArray(originalArray, countArray);
         out.println();
 
+        // Print the sorted array following the instruction,
+        // Which are sort by index-frequency, and sort by ascending-order.
         result = loopResult + "\n" + printResult(sortArray, originalArray, countArray);
         out.print(result);
+
         // for (int i = 0; i < originalArray.length; i++) {
         // out.print("#" + (i + 1) + " " + originalArray[i] + " ("
         // + NewCustomArrayList.arrayFrequency(originalArray, countArray[i]) + ")" +
@@ -121,13 +139,14 @@ public class CustomArrayExample {
         // }
         // if (includeFrequency == 1) {
 
-        // } else if (includeFrequency == 2) {
+        // if (includeFrequency == 2) {
         // for (int i = 0; i < countArray.length; i++) {
         // for (int j = i + 1; j < countArray.length; j++) {
         // if (countArray[i] < countArray[j]) {
         // int temp = countArray[i];
         // countArray[i] = countArray[j];
         // countArray[j] = temp;
+        // }
         // }
         // }
         // }
