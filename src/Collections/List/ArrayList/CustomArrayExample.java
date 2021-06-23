@@ -47,6 +47,15 @@ public class CustomArrayExample {
         return countArray;
     }
 
+    // Get originalArray and countArray, and then compare that there is duplicates
+    // number or not.
+
+    // If there are duplicate number exist, then store into the variable `counts`
+    // to count how many times does the same-index duplicates, and plus `counts`.
+    // And saves into the `getSortedArray` array-variable.
+
+    // Otherwise if there are no duplicate number in the array, then saves into the
+    // `getSortedArray` array-variable.
     public static int[] getSortArray(int[] originalArray, int[] countArray) {
         int[] getSortedArray = new int[countArray.length];
 
@@ -59,12 +68,6 @@ public class CustomArrayExample {
             for (int j = i + 1; j < countArray.length; j++) {
                 getCurrentValue = countArray[i];
                 getNextValue = countArray[j];
-
-                // if (getCurrentValue < getNextValue) {
-                // int temp = getCurrentValue;
-                // getCurrentValue = getNextValue;
-                // getNextValue = temp;
-                // }
 
                 getCurrentCount = NewCustomArrayList.arrayFrequency(originalArray, getCurrentValue);
                 getNextCount = NewCustomArrayList.arrayFrequency(originalArray, getNextValue);
@@ -86,6 +89,7 @@ public class CustomArrayExample {
         return getSortedArray;
     }
 
+    // Print the result of sorted by duplicates number and ascending-order.
     public static String printResult(int[] sortArray, int[] originalArray, int[] countArray) {
         String printResult = "";
 
@@ -131,35 +135,6 @@ public class CustomArrayExample {
         // Which are sort by index-frequency, and sort by ascending-order.
         result = loopResult + "\n" + printResult(sortArray, originalArray, countArray);
         out.print(result);
-
-        // for (int i = 0; i < originalArray.length; i++) {
-        // out.print("#" + (i + 1) + " " + originalArray[i] + " ("
-        // + NewCustomArrayList.arrayFrequency(originalArray, countArray[i]) + ")" +
-        // "\n");
-        // }
-        // if (includeFrequency == 1) {
-
-        // if (includeFrequency == 2) {
-        // for (int i = 0; i < countArray.length; i++) {
-        // for (int j = i + 1; j < countArray.length; j++) {
-        // if (countArray[i] < countArray[j]) {
-        // int temp = countArray[i];
-        // countArray[i] = countArray[j];
-        // countArray[j] = temp;
-        // }
-        // }
-        // }
-        // }
-
-        // out.println();
-
-        // for (int i = 0; i < countArray.length; i++) {
-        // out.print(countArray[i] + " ");
-        // }
-
-        // } else {
-        // System.exit(0);
-        // }
 
         sc.close();
     }
