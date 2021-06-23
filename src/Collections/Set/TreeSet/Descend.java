@@ -1,0 +1,14 @@
+package Collections.Set.TreeSet;
+
+import java.util.Comparator;
+
+public class Descend implements Comparator {
+    @Override
+    public int compare(Object o1, Object o2) {
+        Comparable c1 = (Comparable) o1;
+        Comparable c2 = (Comparable) o2;
+
+        // Sort `Set` as Descending Order
+        return c1.compareTo(c2) * -1;
+    }
+}
