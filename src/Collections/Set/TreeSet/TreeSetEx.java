@@ -40,6 +40,28 @@ public class TreeSetEx {
         // Search `from ~ to + "zzzz"`
         out.println(set.subSet(from, to + "zzzz"));
 
+        out.println("------------------------------");
+
         // Descending Order
+        set = new TreeSet(new Descend());
+        set.add("ant");
+        set.add("alias");
+        set.add("batman");
+        set.add("aha");
+        set.add("cola");
+        set.add("Cola");
+        set.add("ddr");
+        set.add("dance");
+        set.add("dEEE");
+        set.add("deee");
+        set.add("ever");
+        set.add("giant");
+        set.add("zoo");
+
+        out.println(set);
+        out.println("from : " + from + ", to : " + to);
+
+        // Search Opposite way (to ~ from)
+        out.println(set.subSet(to, from));
     }
 }
