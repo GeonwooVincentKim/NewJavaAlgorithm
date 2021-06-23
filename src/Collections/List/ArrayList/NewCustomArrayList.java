@@ -38,6 +38,15 @@ public class NewCustomArrayList {
         this.getArray = getArray;
     }
 
+    // Swap the position of index of array
+    public static int swapArray(int[] getArray, int i, int j) {
+        int temp = getArray[i];
+        getArray[i] = getArray[j];
+        getArray[j] = temp;
+
+        return temp;
+    }
+
     // Display Array Size
     public static int getArraySize(int[] getArray) {
         return getArray.length;
@@ -75,5 +84,4 @@ public class NewCustomArrayList {
         }
         return false;
     }
-
 }

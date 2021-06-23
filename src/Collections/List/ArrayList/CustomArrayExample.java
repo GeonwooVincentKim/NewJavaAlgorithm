@@ -5,14 +5,6 @@ import static java.lang.System.out;
 import java.util.Scanner;
 
 public class CustomArrayExample {
-    public static int swapArray(int[] getArray, int i, int j) {
-        int temp = getArray[i];
-        getArray[i] = getArray[j];
-        getArray[j] = temp;
-
-        return temp;
-    }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         out.println("배열의 길이를 입력해주세요 (정수)");
@@ -59,13 +51,13 @@ public class CustomArrayExample {
                     getNextCount = NewCustomArrayList.arrayFrequency(originalArray, getNextValue);
 
                     if (getCurrentCount < getNextCount) {
-                        swapArray(originalArray, i, j);
-                        swapArray(countArray, i, j);
+                        NewCustomArrayList.swapArray(originalArray, i, j);
+                        NewCustomArrayList.swapArray(countArray, i, j);
 
                         getSortedArray[i] = countArray[i];
                     } else if (getCurrentCount == getNextCount && countArray[i] < countArray[j]) {
-                        swapArray(originalArray, i, j);
-                        swapArray(countArray, i, j);
+                        NewCustomArrayList.swapArray(originalArray, i, j);
+                        NewCustomArrayList.swapArray(countArray, i, j);
 
                         getSortedArray[i] = countArray[i];
                     }
