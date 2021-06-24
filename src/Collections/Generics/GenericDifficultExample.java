@@ -50,6 +50,24 @@ public class GenericDifficultExample {
 
         Gen3 t4 = (Gen3) g4.get();
         out.println(t4.getClass());
+
+        out.println("---------------------------");
+        out.println("Reference all type of <?> Class-Type(Data-Type) (Gen3, Gen2, Gen1 => Generic5<T>) -> ");
+
+        Generic5<?> g6 = new Generic5<Gen3>(g3);
+        out.println(g6.getClass());
+
+        out.println("---------------------------");
+        out.println("Autonomous Crossover (Gen3 => Generic5<T>) -> ");
+
+        Object t5 = g6.get();
+        out.println(t5.getClass());
+
+        out.println("---------------------------");
+        out.println("Forced Crossover (Generic5<T> => Gen3) -> ");
+
+        Gen3 t6 = (Gen3) g6.get();
+        out.println(t6.getClass());
     }
 }
 
