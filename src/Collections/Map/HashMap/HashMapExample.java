@@ -4,6 +4,7 @@ import static java.lang.System.out;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class HashMapExample {
     public static void main(String[] args) {
@@ -30,6 +31,16 @@ public class HashMapExample {
         for (int i = 0; i < names.length; i++) {
             map.put(names[i], nums[i]);
             out.print(map.get(names[i]) + " ");
+        }
+
+        out.println();
+
+        out.print("Map Keys -> ");
+        Set<String> keys = map.keySet();
+        out.println(keys);
+
+        for (int i = 0; i < keys.size(); i++) {
+            out.println(names[i] + "=" + map.get(names[i]));
         }
     }
 }
