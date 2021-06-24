@@ -30,14 +30,14 @@ public class FindInsertPoint {
     // Driver code
     public static void main(String[] args) {
         // int arr[] = new int[20];
-        int arr[] = { 2, 3, 4, 4, 5, 6, 7, 9 };
+        int arr[] = { 2, 3, 4, 5, 9, 10, 12, 15 };
         // for (int i = 0; i < arr.length; i++) {
         // arr[i] = (int) (Math.random() * (10 - 1 + 1)) + 1;
         // }
 
         int n = arr.length;
 
-        int X = 3;
+        int X = 20;
         // System.out.println(LowerInsertionPoint(arr, n, X));
         int result = LowerInsertionPoint(arr, n, X);
 
