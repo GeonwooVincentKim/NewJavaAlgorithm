@@ -34,7 +34,22 @@ public class GenericDifficultExample {
         out.println(t2.getName());
 
         out.println("---------------------------");
-        out.println("Get t2 Type -> ");
+        out.println("Reference ChildClass Data-Type (Generic5<T> => Gen3) -> ");
+
+        Generic5<? extends Gen2> g4 = new Generic5<Gen3>(g3);
+        out.println(g4.getClass());
+
+        out.println("---------------------------");
+        out.println("Autonomous Crossover (Gen3 => Gen2) -> ");
+
+        Gen2 t3 = g4.get();
+        out.println(t3.getClass());
+
+        out.println("---------------------------");
+        out.println("Forced Crossover (Gen2 => Gen3) -> ");
+
+        Gen3 t4 = (Gen3) g4.get();
+        out.println(t4.getClass());
     }
 }
 
