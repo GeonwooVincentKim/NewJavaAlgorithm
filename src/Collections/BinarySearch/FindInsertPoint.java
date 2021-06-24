@@ -13,12 +13,12 @@ public class FindInsertPoint {
         }
 
         int lowerPnt = 0;
-        int i = 1;
+        // int i = 1;
 
-        while (i < n && arr[i] < X) {
-            lowerPnt = i;
-            i = i * 2;
-        }
+        // while (i < n && arr[i] < X) {
+        // lowerPnt = i;
+        // i = i * 2;
+        // }
 
         // Final check for the remaining elements which are < X
         while (lowerPnt < n && arr[lowerPnt] < X)
@@ -37,7 +37,7 @@ public class FindInsertPoint {
 
         int n = arr.length;
 
-        int X = 20;
+        int X = 3;
         // System.out.println(LowerInsertionPoint(arr, n, X));
         int result = LowerInsertionPoint(arr, n, X);
 
