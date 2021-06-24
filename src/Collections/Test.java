@@ -85,12 +85,11 @@ public class Test {
         out.println(printSortArray);
 
         // 4. Find the index that the user looking for using `Binary-Search`.
+        // In this case, you can use `While()` Loop or `Recursive-Function()`
         out.print("찾으실 index 의 값을 입력하세요 : ");
         int userFindIndexInput = sc.nextInt();
-
         int getIndex = binarySearch(randomArray, userFindIndexInput);
 
-        // In this case, you can use `While()` Loop or `Recursive-Function()`
         // 5. Get the result where the index located and display to User
         // that can add the new index between another indexs or not.
         String printResult = printRandomArray + "\n" + printSortArray + "\n" + getIndex;
