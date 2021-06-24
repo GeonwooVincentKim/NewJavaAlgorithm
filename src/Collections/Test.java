@@ -53,14 +53,14 @@ public class Test {
 
         // Find Index until the end of RandomArray
         while (low <= high) {
-            int mid = (low + high) / 2;
+            int middle = (low + high) / 2;
 
-            if (randomArray[mid] == key) {
-                return mid;
-            } else if (randomArray[mid] > key) {
-                high = mid - 1;
-            } else if (randomArray[mid] < key) {
-                low = mid + 1;
+            if (randomArray[middle] == key) {
+                return middle;
+            } else if (randomArray[middle] > key) {
+                high = middle - 1;
+            } else if (randomArray[middle] < key) {
+                low = middle + 1;
             }
         }
 
