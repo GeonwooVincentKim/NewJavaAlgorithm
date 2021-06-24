@@ -54,6 +54,18 @@ public class LambdaExample3 {
 
         f4 = (x, y) -> x + y;
         out.println("두 수의 합 : " + f4.cal(3, 2));
+
+        f4 = (x, y) -> {
+            return x / y;
+        };
+        out.println("두 수의 몫 : " + f4.cal(5, 2));
+
+        f4 = (x, y) -> sum(x, y);
+        out.println("두 수의 합 (sum()) : " + f4.cal(3, 2));
+    }
+
+    public static int sum(int x, int y) {
+        return x + y;
     }
 }
 
