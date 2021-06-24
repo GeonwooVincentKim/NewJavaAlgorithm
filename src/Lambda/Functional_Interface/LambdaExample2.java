@@ -17,6 +17,7 @@ public class LambdaExample2 {
     }
 }
 
+// Prevent not to use over one-function
 @FunctionalInterface
 interface LambdaInterface3 {
     void print(String name);
