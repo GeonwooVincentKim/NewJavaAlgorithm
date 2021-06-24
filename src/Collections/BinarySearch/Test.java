@@ -1,4 +1,4 @@
-package Collections;
+package Collections.BinarySearch;
 
 import static java.lang.System.out;
 
