@@ -1,6 +1,5 @@
 package Collections;
 
-// import java.util.Arrays;
 import static java.lang.System.out;
 
 import java.util.Scanner;
