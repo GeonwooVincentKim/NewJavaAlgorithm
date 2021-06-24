@@ -11,4 +11,7 @@ public class LambdaFunctionExample {
 
 interface InterfaceEx {
     public int sum(int x, int y);
+
+    // Cannot use like this Type
+    // public int max(int a, int b);
 }
