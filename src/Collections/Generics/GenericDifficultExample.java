@@ -68,6 +68,13 @@ public class GenericDifficultExample {
 
         Gen3 t6 = (Gen3) g6.get();
         out.println(t6.getClass());
+
+        out.println("---------------------------");
+        out.println("Reference Integer type (Integer => Generic5<T>) -> ");
+
+        Generic5<?> g7 = new Generic5<Integer>(1);
+        out.println(g7.getClass());
+        out.println(g7.get());
     }
 }
 
