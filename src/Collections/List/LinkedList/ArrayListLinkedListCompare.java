@@ -12,6 +12,7 @@ public class ArrayListLinkedListCompare {
         out.println(arrayList);
 
         // Initialized as Integer array type to avoid `Yellow-Warning-Line`
+        // Already use Generic
         LinkedList<Integer> linkedList = new LinkedList<>();
         out.println(linkedList);
 
