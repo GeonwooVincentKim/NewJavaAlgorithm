@@ -2,6 +2,7 @@ package Collections.Map.HashMap;
 
 import static java.lang.System.out;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -41,21 +42,20 @@ public class HashMapExample {
         out.println(keys);
 
         out.println("----------------------");
-
         out.println("일반적인 For 문을 사용했을 때 -> ");
+
         for (int i = 0; i < keys.size(); i++) {
             out.println(names[i] + " = " + map.get(names[i]));
         }
 
         out.println("----------------------");
-
         out.println("For-Each 문을 사용했을 때 -> ");
+
         for (String key : keys) {
             out.println(key + " = " + map.get(key));
         }
 
         out.println("----------------------");
-
         out.print("Iterator 를 사용했을 때 -> ");
 
         Iterator<String> it = keys.iterator();
@@ -64,6 +64,37 @@ public class HashMapExample {
         while (it.hasNext()) {
             String a = (String) it.next();
             out.println(a + " = " + map.get(a));
+        }
+
+        out.println();
+        out.println("======================");
+        out.println();
+
+        Collection<Integer> values = map.values();
+        out.println(values);
+
+        out.println("----------------------");
+        out.println("일반적인 For 문을 사용했을 때 -> ");
+
+        for (int i = 0; i < values.size(); i++) {
+            out.println(nums[i]);
+        }
+
+        out.println("----------------------");
+        out.println("For-Each 문을 사용했을 때 -> ");
+
+        for (Object i : values) {
+            out.println(i);
+        }
+
+        out.println("----------------------");
+        out.print("Iterator 를 사용했을 때 -> ");
+
+        Iterator<Integer> it1 = values.iterator();
+        out.println(it1);
+
+        while (it.hasNext()) {
+            out.println(it.next());
         }
     }
 }
