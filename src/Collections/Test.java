@@ -32,8 +32,8 @@ public class Test {
     public static int[] sortRandomArray(int[] randomArray) {
         int[] sortArray = new int[randomArray.length];
 
-        for (int i = 0; i < sortArray.length; i++) {
-            for (int j = i + 1; j < sortArray.length; j++) {
+        for (int i = 0; i < randomArray.length; i++) {
+            for (int j = i + 1; j < randomArray.length; j++) {
                 if (randomArray[i] > randomArray[j]) {
                     int temp = randomArray[i];
                     randomArray[i] = randomArray[j];
