@@ -13,7 +13,7 @@ public class IteratorExample {
 
         List<String> arrayList = new ArrayList<String>();
 
-        // 1. For-Loop
+        // 1. For-Loop -> (Include Array)
         out.println("for 문 이용 -> (Array 사용)");
         for (int i = 0; i < array.length; i++) {
             arrayList.add(array[i]);
@@ -23,7 +23,7 @@ public class IteratorExample {
         out.println(arrayList);
         out.println("-----------------------------");
 
-        // 2. Outer-Iterator
+        // 2. Outer-Iterator -> (Include Array)
         out.println("외부 반복자 이용 -> (Array 사용)");
         Iterator<String> iterator = arrayList.iterator();
         out.println(iterator);
@@ -34,7 +34,7 @@ public class IteratorExample {
 
         out.println("-----------------------------");
 
-        // 3. Inner-Iterator
+        // 3. Inner-Iterator -> (Include Array)
         out.println("내부 반복자 이용 -> (Array 사용)");
         arrayList.stream().forEach(s -> out.println(s));
 
