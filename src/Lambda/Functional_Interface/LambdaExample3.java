@@ -20,17 +20,32 @@ public class LambdaExample3 {
 
             for (int i = 0; i < length; i++) {
                 array[i] = (int) (Math.random() * (10 - 1 + 1)) + 1;
-                // out.print(array[i] + " ");
+                out.print(array[i] + " ");
             }
-
-            // out.println();
 
             return array;
         };
 
-        String printLambdaArray = "";
+        out.println();
+        out.println("Random 된 Array 값 (Lambda Function): " + fArray.getArray(10));
 
-        out.println("Random 된 Array 값 : " + fArray.getArray(10));
+        LambdaInterfaceStoreArray fArray2 = new LambdaInterfaceStoreArray() {
+            @Override
+            public int[] getArray(int length) {
+                int[] array = new int[length];
+
+                for (int i = 0; i < length; i++) {
+                    array[i] = (int) (Math.random() * (10 - 1 + 1)) + 1;
+                    out.print(array[i] + " ");
+                }
+
+                return array;
+            }
+        };
+
+        out.println("Random 된 Array 값 (Anonymous Class) : " + fArray2.getArray(10));
+
+        // String printLambdaArray = "";
 
         LambdaInterface4 f4 = (x, y) -> {
             return x * y;
@@ -50,4 +65,9 @@ interface LambdaInterface4 {
 @FunctionalInterface
 interface LambdaInterfaceStoreArray {
     int[] getArray(int length);
+}
+
+@FunctionalInterface
+interface LambdaInterfacePrintArray {
+    String printArray(int[] array);
 }
