@@ -6,16 +6,27 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class IntStreamExample {
+    // Read Array
     public static int[] getArray(int setArrayLength) {
         int[] array = new int[setArrayLength];
 
         for (int i = 0; i < setArrayLength; i++) {
             array[i] = (i + 1);
-            out.print(array[i] + " ");
         }
 
         // Arrays.stream(arr).forEach(s -> out.println(s));
         return array;
+    }
+
+    // Print Array
+    public static String printArray(int[] array) {
+        String loopResult = "";
+
+        for (int i = 0; i < array.length; i++) {
+            loopResult += array[i] + " ";
+        }
+
+        return loopResult;
     }
 
     public static IntStream getIntStream1(int[] arr) {
@@ -25,14 +36,14 @@ public class IntStreamExample {
 
     public static void main(String[] args) {
         int size = 5;
-        int[] arr = getArray(size);
-        // int[] arr = { 1, 2, 3, 4, 5 };
-        out.println(arr);
+        int[] array = getArray(size);
+        String printArray = printArray(array);
+        out.println(printArray);
 
         out.println("----------------------------");
         out.println("Arrays.stream() IntStream 생성하기");
 
-        IntStream intStream1 = Arrays.stream(arr);
+        IntStream intStream1 = Arrays.stream(array);
         out.println(intStream1);
 
         intStream1.forEach(s -> out.print(s + "\t"));
@@ -41,7 +52,7 @@ public class IntStreamExample {
         out.println("----------------------------");
         out.println("IntStream.of() IntStream 생성하기");
 
-        IntStream intStream2 = IntStream.of(arr);
+        IntStream intStream2 = IntStream.of(array);
         out.println(intStream2);
 
         intStream2.forEach(s -> out.print(s + "\t"));
