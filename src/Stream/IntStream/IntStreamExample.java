@@ -36,5 +36,13 @@ public class IntStreamExample {
 
         intStream3.forEach(s -> out.print(s + "\t"));
         out.println();
+
+        out.println("----------------------------");
+        out.println("IntStream.rangeClosed(1, 5) IntStream 생성하기");
+
+        IntStream intStream4 = IntStream.rangeClosed(1, 5);
+        out.println(intStream4);
+
+        intStream4.forEach(s -> out.print(s + "\t"));
     }
 }
