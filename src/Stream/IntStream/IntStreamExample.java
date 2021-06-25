@@ -45,12 +45,32 @@ public class IntStreamExample {
         return intStream2;
     }
 
-    // Get and print Stream as List-Size
+    // Get and print Stream as List-Size by iterating list-elements
+    // (Display until last-Index)
     public static IntStream getIntStream3(int minimum, int maximum) {
         IntStream intStream3 = IntStream.range(minimum, maximum);
 
         intStream3.forEach(s -> out.print(s + "\t"));
         return intStream3;
+    }
+
+    // Get and print Stream as List-Size by Iterating list-elements
+    // (Display before last-Index)
+    public static IntStream getIntStream4(int minimum, int maximum) {
+        IntStream intStream4 = IntStream.rangeClosed(minimum, maximum);
+
+        intStream4.forEach(s -> out.print(s + "\t"));
+        return intStream4;
+    }
+
+    // Implement IntStream `range`
+    public static int[] listRange(int minimum, int maximum) {
+        int[] array = getArray(maximum);
+
+        for (int i = minimum; i < maximum; i++) {
+            out.println(array[i]);
+        }
+        return array;
     }
 
     public static void main(String[] args) {
@@ -71,6 +91,10 @@ public class IntStreamExample {
         IntStream intStream2 = getIntStream2(array);
         out.println(intStream2);
 
+        int[] array2 = array;
+        array2 = listRange(1, size);
+        out.println(array2);
+
         out.println("----------------------------");
         out.println("IntStream.range(1, 6) IntStream 생성하기");
 
@@ -81,9 +105,10 @@ public class IntStreamExample {
         out.println("----------------------------");
         out.println("IntStream.rangeClosed(1, 5) IntStream 생성하기");
 
-        IntStream intStream4 = IntStream.rangeClosed(1, 5);
+        // IntStream intStream4 = IntStream.rangeClosed(1, size);
+        IntStream intStream4 = getIntStream4(1, size);
         out.println(intStream4);
 
-        intStream4.forEach(s -> out.print(s + "\t"));
+        // intStream4.forEach(s -> out.print(s + "\t"));
     }
 }
