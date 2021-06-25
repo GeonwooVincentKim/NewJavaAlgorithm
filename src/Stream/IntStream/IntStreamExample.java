@@ -6,8 +6,27 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class IntStreamExample {
+    public static int[] getArray(int setArrayLength) {
+        int[] array = new int[setArrayLength];
+
+        for (int i = 0; i < setArrayLength; i++) {
+            array[i] = (i + 1);
+            out.print(array[i] + " ");
+        }
+
+        // Arrays.stream(arr).forEach(s -> out.println(s));
+        return array;
+    }
+
+    public static IntStream getIntStream1(int[] arr) {
+        IntStream intStream1 = Arrays.stream(arr);
+        return intStream1;
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 5 };
+        int size = 5;
+        int[] arr = getArray(size);
+        // int[] arr = { 1, 2, 3, 4, 5 };
         out.println(arr);
 
         out.println("----------------------------");
