@@ -20,11 +20,21 @@ public class IntStreamExample {
         out.println();
 
         out.println("----------------------------");
+        out.println("IntStream.of() IntStream 생성하기");
 
         IntStream intStream2 = IntStream.of(arr);
         out.println(intStream2);
 
         intStream2.forEach(s -> out.print(s + "\t"));
+        out.println();
+
+        out.println("----------------------------");
+        out.println("IntStream.range(1, 6) IntStream 생성하기");
+
+        IntStream intStream3 = IntStream.range(1, 6);
+        out.println(intStream3);
+
+        intStream3.forEach(s -> out.print(s + "\t"));
         out.println();
     }
 }
