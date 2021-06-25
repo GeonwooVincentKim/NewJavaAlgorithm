@@ -2,9 +2,7 @@ package Stream.IntStream;
 
 import static java.lang.System.out;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.IntStream;
 
 public class IntStreamExample {
@@ -31,22 +29,20 @@ public class IntStreamExample {
         return loopResult;
     }
 
-    // Convert to `List` Type
-    public static List<Integer> convertList(int[] array) {
-        List<Integer> list = new ArrayList<Integer>();
-
-        for (int i = 0; i < array.length; i++) {
-
-        }
-
-        return list;
-    }
-
+    // Print Stream which are already converted from `Array`
     public static IntStream getIntStream1(int[] array) {
         IntStream intStream1 = Arrays.stream(array);
 
         intStream1.forEach(s -> out.print(s + "\t"));
         return intStream1;
+    }
+
+    // Print IntStream List
+    public static IntStream getIntStream2(int[] array) {
+        IntStream intStream2 = IntStream.of(array);
+
+        intStream2.forEach(s -> out.print(s + "\t"));
+        return intStream2;
     }
 
     public static void main(String[] args) {
@@ -58,21 +54,14 @@ public class IntStreamExample {
         out.println("----------------------------");
         out.println("Arrays.stream() IntStream 생성하기");
 
-        // IntStream intStream1 = Arrays.stream(array);
         IntStream intStream1 = getIntStream1(array);
         out.println(intStream1);
-
-        // intStream1.forEach(s -> out.print(s + "\t"));
-        // out.println();
 
         out.println("----------------------------");
         out.println("IntStream.of() IntStream 생성하기");
 
-        IntStream intStream2 = IntStream.of(array);
+        IntStream intStream2 = getIntStream2(array);
         out.println(intStream2);
-
-        intStream2.forEach(s -> out.print(s + "\t"));
-        out.println();
 
         out.println("----------------------------");
         out.println("IntStream.range(1, 6) IntStream 생성하기");
