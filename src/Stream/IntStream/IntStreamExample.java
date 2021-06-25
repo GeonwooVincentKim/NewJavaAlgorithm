@@ -45,6 +45,14 @@ public class IntStreamExample {
         return intStream2;
     }
 
+    // Get and print Stream as List-Size
+    public static IntStream getIntStream3(int minimum, int maximum) {
+        IntStream intStream3 = IntStream.range(minimum, maximum);
+
+        intStream3.forEach(s -> out.print(s + "\t"));
+        return intStream3;
+    }
+
     public static void main(String[] args) {
         int size = 5;
         int[] array = getArray(size);
@@ -66,11 +74,9 @@ public class IntStreamExample {
         out.println("----------------------------");
         out.println("IntStream.range(1, 6) IntStream 생성하기");
 
-        IntStream intStream3 = IntStream.range(1, 6);
+        // IntStream intStream3 = IntStream.range(1, 6);
+        IntStream intStream3 = getIntStream3(1, size + 1);
         out.println(intStream3);
-
-        intStream3.forEach(s -> out.print(s + "\t"));
-        out.println();
 
         out.println("----------------------------");
         out.println("IntStream.rangeClosed(1, 5) IntStream 생성하기");
