@@ -3,6 +3,7 @@ package Network.TCP;
 import static java.lang.System.out;
 
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -65,5 +66,37 @@ class HttpThread extends Thread {
 
     public void setClient(Socket client) {
         this.client = client;
+    }
+
+    public void run() {
+        BufferedReader fileBufferedReader = null;
+        DataOutputStream outToClient = null;
+
+        out.println("----------------");
+        out.print("Current `FileBufferedReader` value : ");
+        out.println(fileBufferedReader);
+
+        out.print("Current `OutToClient` value : ");
+        out.println(outToClient);
+
+        try {
+            String line = bufferedReader.readLine();
+            // Line : Get / HTTP/1.1
+
+            out.println("Http Reader : " + line);
+
+            int start = line.indexOf("/") + 1;
+            int end = line.lastIndexOf("HTTP") - 1;
+
+            String fileName = line.substring(start, end);
+            if (fileName.equals("")) {
+                fileName = "index.html";
+            }
+            out.println("사용자 요청 파일 : " + fileName);
+        } catch (IOException e) {
+            out.println(e.getMessage());
+            out.println("----------------");
+            e.printStackTrace();
+        }
     }
 }
