@@ -20,6 +20,7 @@ public class UDPClient {
             out.println(serverIP);
 
             while (true) {
+                // Read Line by Line
                 String data = systemIn.readLine();
                 out.println(data);
 

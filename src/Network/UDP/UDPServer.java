@@ -18,18 +18,26 @@ public class UDPServer {
 
             while (true) {
                 out.println("--------------------------");
+                // Generate inMessage byte array and set it length as `1024`
+                // 1 KB(Kilo-Byte) = 1024 Bytes
                 inMessage = new byte[1024];
+
+                // Generate InPacket Instance
                 inPacket = new DatagramPacket(inMessage, inMessage.length);
-                out.println("InMessage : " + inMessage + "\n" + "inPacket : " + inPacket);
+                out.println("InMessage : " + inMessage + "\n" + "inMessage length : " + inMessage.length + "\n"
+                        + "inPacket : " + inPacket);
 
                 // Receive PacketData
                 socket.receive(inPacket);
 
                 // Save as Character-String(String)
                 String message = new String(inMessage, 0, inPacket.getLength());
-                out.println("Client Message : " + message);
+                out.println("Client Message : " + message + "\n" + "Client Message length : " + inMessage.length);
 
+                // Client IP
                 InetAddress address = inPacket.getAddress();
+
+                // Client Port
                 int port = inPacket.getPort();
 
                 out.println("Client Address : " + address);
