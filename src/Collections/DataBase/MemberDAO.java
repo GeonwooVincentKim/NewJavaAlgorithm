@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MemberDAO {
     // Object for Access into DataBase
@@ -33,7 +35,33 @@ public class MemberDAO {
         }
     }
 
+    public List<MemberVO> memberList() {
+        List<MemberVO> list = new ArrayList<MemberVO>();
+
+        try {
+            String sql = "SELECT * FROM member";
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()) {
+                MemberVO vo = new MemberVO();
+                vo.setMember_no(resultSet.getInt("member_no"));
+                vo.setId(resultSet.getString("id"));
+                vo.setName(resultSet.getString("name"));
+                list.add(vo);
+            }
+        } catch (SQLException e) {
+            out.println(e.getMessage());
+            out.println("<---------------------->");
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
     // Insert Data
+    // INSERT INTO, UPDATE, DELETE, SELECT * --> Parameter 1
+    // MEMBER --> DEFAULT
     public int insert(MemberVO vo) {
         int result = 0;
 

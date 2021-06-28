@@ -2,6 +2,8 @@ package Collections.DataBase;
 
 import static java.lang.System.out;
 
+import java.util.List;
+
 public class MemberMain {
     public static void main(String[] args) {
         // Create MemberVO Instance
@@ -20,6 +22,13 @@ public class MemberMain {
         int r = dao.insert(vo);
         if (r > 0) {
             out.println("회원 등록 성공");
+        }
+
+        // Show list of Member
+        List<MemberVO> memberList = dao.memberList();
+        for (int i = 0; i < memberList.size(); i++) {
+            out.println("회원 번호 : " + memberList.get(i).getMember_no() + "\t아이디 : " + memberList.get(i).getId()
+                    + "\t이름 : " + memberList.get(i).getName());
         }
 
         // Update Member
