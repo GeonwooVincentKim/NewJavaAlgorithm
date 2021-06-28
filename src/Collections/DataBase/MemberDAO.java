@@ -60,6 +60,29 @@ public class MemberDAO {
         return list;
     }
 
+    // Get one member and show
+    public MemberVO selectMember(int memberNo) {
+        MemberVO vo = new MemberVO();
+
+        try {
+            String sql = "SELECT * FROM MEMBER WHERE MEMBER_NO = " + memberNo;
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);
+
+            if (resultSet.next()) {
+                vo.setMember_no(resultSet.getInt("member_no"));
+                vo.setId(resultSet.getString("id"));
+                vo.setName(resultSet.getString("name"));
+            }
+        } catch (SQLException e) {
+            out.println(e.getMessage());
+            out.println("<--------------------->");
+            e.printStackTrace();
+        }
+
+        return vo;
+    }
+
     // Insert Data
     // INSERT INTO, UPDATE, DELETE, SELECT * --> Parameter 1
     // MEMBER --> DEFAULT

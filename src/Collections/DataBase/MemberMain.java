@@ -24,6 +24,13 @@ public class MemberMain {
             out.println("회원 등록 성공");
         }
 
+        // Query No.2 member and print the result
+        MemberVO resultVO = dao.selectMember(2);
+        out.println("회원정보 출력");
+        out.println("회원번호 : " + resultVO.getMember_no());
+        out.println("아이디 : " + resultVO.getId());
+        out.println("이름 : " + resultVO.getName());
+
         // Show list of Member
         List<MemberVO> memberList = dao.memberList();
         for (int i = 0; i < memberList.size(); i++) {
