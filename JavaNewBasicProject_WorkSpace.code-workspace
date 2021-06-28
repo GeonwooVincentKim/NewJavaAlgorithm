@@ -4,5 +4,10 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.project.referencedLibraries": [
+			"lib/**/*.jar",
+			"mariadb-java-client-2.6.1.jar"
+		]
+	}
 }
