@@ -4,6 +4,7 @@ import static java.lang.System.out;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -80,9 +81,8 @@ class HttpThread extends Thread {
         out.println(outToClient);
 
         try {
-            String line = bufferedReader.readLine();
             // Line : Get / HTTP/1.1
-
+            String line = bufferedReader.readLine();
             out.println("Http Reader : " + line);
 
             int start = line.indexOf("/") + 1;
@@ -93,10 +93,32 @@ class HttpThread extends Thread {
                 fileName = "index.html";
             }
             out.println("사용자 요청 파일 : " + fileName);
+            fileBufferedReader = new BufferedReader(new FileReader(fileName));
+
+            String fileLine = null;
+            printWriter.println("HTTP/1.0 200 Document Follows \r\n");
+
+            while ((fileLine = fileBufferedReader.readLine()) != null) {
+                printWriter.println(fileLine);
+                printWriter.flush();
+            }
         } catch (IOException e) {
             out.println(e.getMessage());
             out.println("----------------");
             e.printStackTrace();
+        } finally {
+            try {
+                if (bufferedReader != null)
+                    bufferedReader.close();
+                if (printWriter != null)
+                    printWriter.close();
+                if (client != null)
+                    client.close();
+            } catch (IOException e) {
+                out.println(e.getMessage());
+                out.println("---------------");
+                e.printStackTrace();
+            }
         }
     }
 }
