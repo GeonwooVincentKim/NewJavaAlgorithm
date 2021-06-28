@@ -35,6 +35,7 @@ public class MemberDAO {
         }
     }
 
+    // Show List of Member
     public List<MemberVO> memberList() {
         List<MemberVO> list = new ArrayList<MemberVO>();
 
@@ -94,6 +95,22 @@ public class MemberDAO {
             e.printStackTrace();
         }
 
+        return result;
+    }
+
+    // Delete Data
+    public int delete(int member_no) {
+        int result = 0;
+
+        try {
+            String sql = "DELETE FROM MEMBER WHERE MEMBER_NO = " + member_no;
+            statement = connection.createStatement();
+            result = statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            out.println(e.getMessage());
+            out.println("<---------------------->");
+            e.printStackTrace();
+        }
         return result;
     }
 }

@@ -37,5 +37,12 @@ public class MemberMain {
         if (r2 > 0) {
             out.println("회원 수정 성공");
         }
+
+        // Delete Member
+        // vo.setMember_no(1);
+        int r3 = dao.delete(2);
+        if (r3 > 0) {
+            out.println("회원 삭제 성공");
+        }
     }
 }
