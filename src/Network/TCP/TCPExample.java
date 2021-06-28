@@ -92,6 +92,8 @@ class HttpThread extends Thread {
             // Get from `HTTP` which is behind of `index.html`, the file-name
             int end = line.lastIndexOf("HTTP") - 1;
 
+            // If the substituted string is equals to "",
+            // Then get the fileName as `index.html`.
             String fileName = line.substring(start, end);
             if (fileName.equals("")) {
                 fileName = "index.html";
