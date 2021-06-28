@@ -85,7 +85,11 @@ class HttpThread extends Thread {
             String line = bufferedReader.readLine();
             out.println("Http Reader : " + line);
 
+            // Get the `index.html` page information
+            // Starting from `Get /`
             int start = line.indexOf("/") + 1;
+
+            // Get from `HTTP` which is behind of `index.html`, the file-name
             int end = line.lastIndexOf("HTTP") - 1;
 
             String fileName = line.substring(start, end);
@@ -93,6 +97,7 @@ class HttpThread extends Thread {
                 fileName = "index.html";
             }
             out.println("사용자 요청 파일 : " + fileName);
+            // Connect to `Index.html` File from Server
             fileBufferedReader = new BufferedReader(new FileReader(fileName));
 
             String fileLine = null;
