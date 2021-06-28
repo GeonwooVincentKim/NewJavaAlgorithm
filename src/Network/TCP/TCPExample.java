@@ -18,14 +18,17 @@ public class TCPExample {
         out.println(server);
 
         try {
+            // Set the Server Port as `9999`
             server = new ServerSocket(9999);
 
             // Waiting for client access to Server -> Infinite Repetition
             while (true) {
                 out.println("Waiting for Client access to Server");
+                // Listens for a connection to be made to this socket and accepts it.
                 Socket client = server.accept();
                 out.println(client);
 
+                // Call the HttpThread Class
                 HttpThread ht = new HttpThread(client);
                 ht.start();
             }
@@ -52,6 +55,7 @@ class HttpThread extends Thread {
         this.setClient(client);
 
         try {
+            // Initialize BufferedReader instance and PrintWriter Instance
             bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
             printWriter = new PrintWriter(client.getOutputStream());
         } catch (IOException e) {
@@ -105,9 +109,10 @@ class HttpThread extends Thread {
             String fileLine = null;
             printWriter.println("HTTP/1.0 200 Document Follows \r\n");
 
+            // Print the result of gotten file-information
             while ((fileLine = fileBufferedReader.readLine()) != null) {
                 printWriter.println(fileLine);
-                printWriter.flush();
+                printWriter.flush(); // Print the rest of text and empty the printWriter Instance
             }
         } catch (IOException e) {
             out.println(e.getMessage());
