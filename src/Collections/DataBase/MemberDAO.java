@@ -92,14 +92,20 @@ public class MemberDAO {
         try {
             String sql = "INSERT INTO member (member_no, id, name) VALUES (" + vo.getMember_no() + ", '" + vo.getId()
                     + "', '" + vo.getName() + "')";
-            statement = connection.createStatement();
-            result = statement.executeUpdate(sql);
+            result = connectToDataBase(sql);
         } catch (SQLException e) {
             out.println(e.getMessage());
             out.println("<---------------------->");
             e.printStackTrace();
         }
 
+        return result;
+    }
+
+    private int connectToDataBase(String sql) throws SQLException {
+        int result;
+        statement = connection.createStatement();
+        result = statement.executeUpdate(sql);
         return result;
     }
 
@@ -110,8 +116,7 @@ public class MemberDAO {
         try {
             String sql = "UPDATE MEMBER SET ID = '" + vo.getId() + "', NAME = '" + vo.getName() + "' "
                     + "WHERE MEMBER_NO = " + vo.getMember_no();
-            statement = connection.createStatement();
-            result = statement.executeUpdate(sql);
+            result = connectToDataBase(sql);
         } catch (SQLException e) {
             out.println(e.getMessage());
             out.println("<---------------------->");
@@ -127,8 +132,7 @@ public class MemberDAO {
 
         try {
             String sql = "DELETE FROM MEMBER WHERE MEMBER_NO = " + member_no;
-            statement = connection.createStatement();
-            result = statement.executeUpdate(sql);
+            result = connectToDataBase(sql);
         } catch (SQLException e) {
             out.println(e.getMessage());
             out.println("<---------------------->");
