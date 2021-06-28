@@ -32,4 +32,22 @@ public class MemberDAO {
             e.printStackTrace();
         }
     }
+
+    // Insert Data
+    public int insert(MemberVO vo) {
+        int result = 0;
+
+        try {
+            String sql = "INSERT INTO member (member_no, id, name) VALUES (" + vo.getMember_no() + ", '" + vo.getId()
+                    + "', '" + vo.getName() + "')";
+            statement = connection.createStatement();
+            result = statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            out.println(e.getMessage());
+            out.println("<---------------------->");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 }
