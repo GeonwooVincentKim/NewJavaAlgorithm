@@ -21,5 +21,12 @@ public class MemberMain {
         if (r > 0) {
             out.println("회원 등록 성공");
         }
+
+        // Update Member
+        vo.setName("고길동");
+        int r2 = dao.update(vo);
+        if (r2 > 0) {
+            out.println("회원 수정 성공");
+        }
     }
 }

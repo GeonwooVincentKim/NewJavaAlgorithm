@@ -50,4 +50,22 @@ public class MemberDAO {
 
         return result;
     }
+
+    // Update Data
+    public int update(MemberVO vo) {
+        int result = 0;
+
+        try {
+            String sql = "UPDATE MEMBER SET ID = '" + vo.getId() + "', NAME = '" + vo.getName() + "' "
+                    + "WHERE MEMBER_NO = " + vo.getMember_no();
+            statement = connection.createStatement();
+            result = statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            out.println(e.getMessage());
+            out.println("<---------------------->");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 }
