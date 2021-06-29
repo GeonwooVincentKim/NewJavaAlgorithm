@@ -10,6 +10,6 @@ public interface Calculator {
     }
 
     static int executeMultiply(int previousNumber, int post) {
-        return previousNumber + post;
+        return previousNumber * post;
     }
 }
