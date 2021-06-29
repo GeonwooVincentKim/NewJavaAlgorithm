@@ -1,11 +1,10 @@
 package Class.Interface;
 
-public class BaseBallPlayer implements Player {
+import static java.lang.System.out;
 
+public class BaseBallPlayer implements Player {
     @Override
     public void play() {
-        // TODO Auto-generated method stub
-
+        out.println("야구선수가 야구를 합니다.");
     }
-
 }
