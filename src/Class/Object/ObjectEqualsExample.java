@@ -20,6 +20,12 @@ public class ObjectEqualsExample {
         }
 
         out.println("---------------");
+        out.println("객체 내 hashCode 값 비교");
+
+        out.println(obj1.hashCode());
+        out.println(obj2.hashCode());
+
+        out.println("---------------");
         out.println("equals() 을 통한 객체 주소 값 비교");
 
         if (obj1.equals(obj2)) {
@@ -40,6 +46,12 @@ public class ObjectEqualsExample {
         } else {
             out.println("객체 주소 값이 같지 않습니다.");
         }
+
+        out.println("---------------");
+        out.println("객체 내 hashCode 값 비교");
+
+        out.println(obj1.hashCode());
+        out.println(obj3.hashCode());
 
         out.println("---------------");
         out.println("Overrided equals() 을 통한 객체 주소 값 비교");
