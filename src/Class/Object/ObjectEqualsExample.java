@@ -42,13 +42,49 @@ public class ObjectEqualsExample {
         }
 
         out.println("---------------");
-        out.println("== 을 통한 객체 주소 값 비교");
+        out.println("Overrided equals() 을 통한 객체 주소 값 비교");
 
         ObjOverride objo1 = new ObjOverride(100);
         out.println(objo1);
 
         ObjOverride objo2 = new ObjOverride(100);
         out.println(objo2);
+
+        if (objo1.equals(objo2)) {
+            out.println("객체 주소 값이 같습니다.");
+        } else {
+            out.println("객체 주소 값이 같지 않습니다.");
+        }
+
+        out.println("---------------");
+        out.println("기본 Object == 을 통한 객체 주소 값 비교");
+
+        Object basicObject1 = new Object();
+        out.println(basicObject1);
+
+        Object basicObject2 = new Object();
+        out.println(basicObject2);
+
+        if (basicObject1 == basicObject2) {
+            out.println("객체 주소 값이 같습니다.");
+        } else {
+            out.println("객체 주소 값이 같지 않습니다.");
+        }
+
+        out.println("---------------");
+        out.println("기본 Object equals() 을 통한 객체 주소 값 비교");
+
+        Object basicObject11 = new Object();
+        out.println(basicObject11);
+
+        Object basicObject22 = new Object();
+        out.println(basicObject22);
+
+        if (basicObject11.equals(basicObject22)) {
+            out.println("객체 주소 값이 같습니다.");
+        } else {
+            out.println("객체 주소 값이 같지 않습니다.");
+        }
     }
 }
 
