@@ -15,8 +15,8 @@ public class LambdaTest {
         int[] array = new int[userInput];
 
         for (int i = 0; i < userInput; i++) {
-            // array[i] = (int) (Math.random() * (50 - 10 + 1)) + 10;
-            array[i] = sc.nextInt();
+            array[i] = (int) (Math.random() * (50 - 10 + 1)) + 10;
+            // array[i] = sc.nextInt();
             // out.print(array[i] + " ");
         }
 
