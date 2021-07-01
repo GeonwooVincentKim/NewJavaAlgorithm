@@ -5,6 +5,38 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 public class LambdaTest {
+    public static int[] getRandomValue(int userInput) {
+        int[] array = new int[userInput];
+
+        for (int i = 0; i < userInput; i++) {
+            array[i] = (int) (Math.random() * (50 - 10 + 1)) + 10;
+        }
+
+        return array;
+    }
+
+    public static String printRandomValue(int[] randomArray) {
+        String loopResult = "";
+
+        for (int i = 0; i < randomArray.length; i++) {
+            loopResult += randomArray[i] + " ";
+        }
+
+        return loopResult;
+    }
+
+    public static double getRandomArraySum(int[] randomArray) {
+        double sum = 0;
+
+        for (int i = 0; i < randomArray.length; i++) {
+            sum += randomArray[i];
+        }
+
+        return sum;
+    }
+
+    // public static
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -12,27 +44,15 @@ public class LambdaTest {
         out.println(userInput);
 
         // userInput 의 길이만큼 array 길이 입력받기
-        int[] array = new int[userInput];
-
-        for (int i = 0; i < userInput; i++) {
-            array[i] = (int) (Math.random() * (50 - 10 + 1)) + 10;
-            // array[i] = sc.nextInt();
-            // out.print(array[i] + " ");
-        }
-
-        for (int i = 0; i < array.length; i++) {
-            out.print(array[i] + " ");
-        }
+        // int[] array = new int[userInput];
+        int[] array = getRandomValue(userInput);
+        String printLoopResult = printRandomValue(array);
+        out.println(printLoopResult);
 
         out.println();
 
         // 합계
-        double sum = 0;
-
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
-        }
-
+        double sum = getRandomArraySum(array);
         out.println("합계 : " + sum + " ");
 
         // 평균
@@ -61,4 +81,8 @@ public class LambdaTest {
 
         sc.close();
     }
+}
+
+interface getArray {
+    void handleArray();
 }
