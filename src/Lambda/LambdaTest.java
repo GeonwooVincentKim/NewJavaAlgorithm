@@ -41,6 +41,7 @@ public class LambdaTest {
     public static double getRandomArrayAverage(int[] randomArray) {
         double sum = getRandomArraySum(randomArray);
         double average = sum / randomArray.length;
+
         return average;
     }
 
@@ -53,6 +54,13 @@ public class LambdaTest {
         }
 
         return deviationSum;
+    }
+
+    public static double getDeviationAverage(int[] randomArray) {
+        double deviationSum = getDeviationSum(randomArray);
+        double deviation = deviationSum / randomArray.length;
+
+        return deviation;
     }
 
     public static void main(String[] args) {
