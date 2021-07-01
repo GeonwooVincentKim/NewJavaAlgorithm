@@ -6,12 +6,15 @@ import static java.lang.System.out;
 
 public class LambdaTest {
     public static int[] getRandomValue(int userInput) {
+        Scanner sc = new Scanner(System.in);
         int[] array = new int[userInput];
 
         for (int i = 0; i < userInput; i++) {
-            array[i] = (int) (Math.random() * (50 - 10 + 1)) + 10;
+            // array[i] = (int) (Math.random() * (50 - 10 + 1)) + 10;
+            array[i] = sc.nextInt();
         }
 
+        sc.close();
         return array;
     }
 
@@ -35,7 +38,22 @@ public class LambdaTest {
         return sum;
     }
 
-    // public static
+    public static double getRandomArrayAverage(int[] randomArray) {
+        double sum = getRandomArraySum(randomArray);
+        double average = sum / randomArray.length;
+        return average;
+    }
+
+    public static double getDeviationSum(int[] randomArray) {
+        double average = getRandomArrayAverage(randomArray);
+        double deviationSum = 0;
+
+        for (int i = 0; i < randomArray.length; i++) {
+            deviationSum += (randomArray[i] - average) * (randomArray[i] - average);
+        }
+
+        return deviationSum;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -56,16 +74,11 @@ public class LambdaTest {
         out.println("합계 : " + sum + " ");
 
         // 평균
-        double average = sum / array.length;
+        double average = getRandomArrayAverage(array);
         out.println("평균 : " + average);
 
         // 각 수들의 편차 곱
-        double deviationSum = 0;
-
-        for (int i = 0; i < array.length; i++) {
-            deviationSum += (array[i] - average) * (array[i] - average);
-        }
-
+        double deviationSum = getDeviationSum(array);
         out.printf("편차 곱 : %.2f", deviationSum);
         out.print(" ");
         out.println();
