@@ -65,8 +65,8 @@ public class TestStream {
 
         int userInputLength = sc.nextInt();
 
-        // List<Integer> calculateArray = calculator(userInputLength);
-        int[] calculateArray = calculatorArray(userInputLength);
+        List<Integer> calculateArray = calculator(userInputLength);
+        // int[] calculateArray = calculatorArray(userInputLength);
         // out.println(calculateArray);
         // out.println();
 
