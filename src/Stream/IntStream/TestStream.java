@@ -38,7 +38,6 @@ public class TestStream {
         int[] array = new int[numberLength];
 
         // 이미 IntStream 이라는 Stream 형 자료형 하나를 제공하고 있기 때문에 굳이 Stream<Integer> 를 쓰지 않아도 된다.
-        //
         Stream<Integer> stream = Arrays.stream(array).mapToObj(a -> array.length);
         stream.mapToInt(a -> (int) (Math.random() * (50 - 10 + 1)) + 10);
 
@@ -55,18 +54,20 @@ public class TestStream {
         return intList;
     }
 
-    public static String printResult(List<Integer> getCalculateArray) {
+    public static String printResult(List<Integer> getCalculateList) {
         String result = "";
 
-        getCalculateArray.stream().forEach(string -> out.print(string + " "));
+        getCalculateList.stream().forEach(string -> out.print(string + " "));
 
         return result;
     }
 
-    public static String printResult(int[] calculateArray) {
+    public static String printResult(int[] getCalculateArray) {
         String result = "";
 
-        Stream<Integer> stream = Arrays.stream(calculateArray).mapToObj(a -> calculateArray.length);
+        // Get CalculateArray and print as a Stream<Integer> type value
+        // Convert Int or other primitive type into Integer
+        Stream<Integer> stream = Arrays.stream(getCalculateArray).mapToObj(a -> getCalculateArray.length);
         stream.forEach(string -> out.print(string + " "));
 
         return result;
@@ -78,14 +79,20 @@ public class TestStream {
 
         int userInputLength = sc.nextInt();
 
-        List<Integer> calculateArray = calculator(userInputLength);
-        // List<Integer> calculateListInteger = calculatorListInteger(userInputLength);
         // int[] calculateArray = calculatorArray(userInputLength);
         // out.println(calculateArray);
+
+        List<Integer> calculateList = calculator(userInputLength);
+        out.println(calculateList);
+
+        // List<Integer> calculateListInteger = calculatorListInteger(userInputLength);
         // out.println();
 
-        String result = printResult(calculateArray);
+        String result = printResult(calculateList);
         out.println(result);
+
+        // String result = printResult(calculateArray);
+        // out.println(result);
 
         sc.close();
     }
