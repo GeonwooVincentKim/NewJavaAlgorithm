@@ -38,7 +38,7 @@ public class StreamParallelExample {
         start = System.nanoTime();
         out.println(start);
 
-        // Calculating s
+        // Calculating Parallel Stream Calculation times
         list.parallelStream().forEach(a -> {
             try {
                 Thread.sleep(1);
