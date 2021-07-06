@@ -32,7 +32,9 @@ class SmartPhoneGame {
     // this.level = level;
     // }
 
-    public void increaseLevel() {
+    // increaseLevel 을 실행할 때, Class1과 Class2가 동시에 실행되는 것이 아닌
+    // Class1 먼저 실행 후, Class2가 실행되도록 프로세스 상에서 동기화 시킨다.
+    public synchronized void increaseLevel() {
         while (true) {
             this.level++;
 
