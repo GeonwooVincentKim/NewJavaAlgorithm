@@ -6,8 +6,19 @@ public class ThreadExample {
     public static void main(String[] args) {
         SmartPhoneGame game = new SmartPhoneGame();
         out.println(game);
-    }
 
+        Player1 p1 = new Player1();
+        out.println(p1);
+
+        p1.setSmartPhoneGame(game);
+        p1.start();
+
+        Player2 p2 = new Player2();
+        out.println(p2);
+
+        p2.setSmartPhoneGame(game);
+        p2.start();
+    }
 }
 
 class SmartPhoneGame {
