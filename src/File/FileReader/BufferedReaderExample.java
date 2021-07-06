@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileReaderExample {
+public class BufferedReaderExample {
     public static void main(String[] args) {
         FileReader fr = null;
         BufferedReader br = null;
