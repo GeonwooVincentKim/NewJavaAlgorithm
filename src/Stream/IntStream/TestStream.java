@@ -19,7 +19,9 @@ public class TestStream {
         // IntStream 의 길이를 numberLength 만큼 초기화 시킨 후, numberLength 의 길이만큼의 초기화된 intStream
         // 만큼
         // list 에 지정 범위가 있는 random 값들을 가져온다.
-        IntStream intStream = new Random().ints(numberLength); // 압력받은 숫자 개수 만큼 random 수를 받는다.
+
+        // 압력받은 숫자 개수 만큼 random 수를 받고, Random 수의 범위를 최솟 값 10 에서 최댓 값 50 으로 잡는다.
+        IntStream intStream = new Random().ints(numberLength, 10, 50);
         intStream.forEach(s -> list.add(s)); // 여기서 강제적으로 random 수의 범위를 정해준다.
 
         // 초기화하지 않은 IntStream 에 값을 집어넣으면 값이 추가되지 않고,
