@@ -34,24 +34,28 @@ class SmartPhoneGame {
 
     // increaseLevel 을 실행할 때, Class1과 Class2가 동시에 실행되는 것이 아닌
     // Class1 먼저 실행 후, Class2가 실행되도록 프로세스 상에서 동기화 시킨다.
-    public synchronized void increaseLevel() {
-        while (true) {
-            this.level++;
+    // public synchronized void increaseLevel() {
+    public void increaseLevel() {
+        // this -> smartPhone Object
+        synchronized (this) {
+            while (true) {
+                this.level++;
 
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
 
-            } catch (Exception e) {
-                out.println(e.getMessage());
-                out.println("-------------------------");
-                e.printStackTrace();
+                } catch (Exception e) {
+                    out.println(e.getMessage());
+                    out.println("-------------------------");
+                    e.printStackTrace();
+                }
+
+                out.println(Thread.currentThread().getName() + " Level : " + this.level);
+
+                if (this.level % 10 == 0)
+                    break;
             }
-
-            out.println(Thread.currentThread().getName() + " Level : " + this.level);
-
-            if (this.level % 10 == 0)
-                break;
         }
     }
 }
