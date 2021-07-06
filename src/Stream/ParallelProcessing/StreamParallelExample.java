@@ -14,5 +14,25 @@ public class StreamParallelExample {
             out.print(list.get(i) + " ");
         }
 
+        out.println();
+
+        long start = System.nanoTime();
+        out.println(start);
+
+        // Starting List Stream Calculation
+        list.stream().forEach(a -> {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                out.println(e.getClass());
+                out.println("----------------");
+                e.printStackTrace();
+            }
+        });
+
+        long end = System.nanoTime();
+        out.println(end);
+
+        out.println("병렬 스트림 처리 시간 : " + (end - start) + " nano sec");
     }
 }
