@@ -20,7 +20,7 @@ public class TestStream {
         // 만큼
         // list 에 지정 범위가 있는 random 값들을 가져온다.
         IntStream intStream = new Random().ints(numberLength); // 압력받은 숫자 개수 만큼 random 수를 받는다.
-        intStream.forEach(s -> list.add((int) (Math.random() * (50 - 10 + 1)) + 10)); // 여기서 강제적으로 random 수의 범위를 정해준다.
+        intStream.forEach(s -> list.add(s)); // 여기서 강제적으로 random 수의 범위를 정해준다.
 
         // 초기화하지 않은 IntStream 에 값을 집어넣으면 값이 추가되지 않고,
         // 설령 추가되었다고 하더라고 모두 값이 들어가지 않은 완전 빈 값이 들어가게 된다.
@@ -35,11 +35,22 @@ public class TestStream {
     public static int[] calculatorArray(int numberLength) {
         int[] array = new int[numberLength];
 
+        // 이미 IntStream 이라는 Stream 형 자료형 하나를 제공하고 있기 때문에 굳이 Stream<Integer> 를 쓰지 않아도 된다.
         //
         Stream<Integer> stream = Arrays.stream(array).mapToObj(a -> array.length);
         stream.mapToInt(a -> (int) (Math.random() * (50 - 10 + 1)) + 10);
 
         return array;
+    }
+
+    public static List<Integer> calculatorListInteger(int numberLength) {
+        List<Integer> intList = new ArrayList<>();
+
+        Stream<Integer> stream = intList.stream().limit(numberLength);
+
+        stream.forEach(s -> intList.add((int) (Math.random() * (50 - 10 + 1) + 10)));
+
+        return intList;
     }
 
     public static String printResult(List<Integer> getCalculateArray) {
@@ -66,6 +77,7 @@ public class TestStream {
         int userInputLength = sc.nextInt();
 
         List<Integer> calculateArray = calculator(userInputLength);
+        // List<Integer> calculateListInteger = calculatorListInteger(userInputLength);
         // int[] calculateArray = calculatorArray(userInputLength);
         // out.println(calculateArray);
         // out.println();
