@@ -22,7 +22,11 @@ public class AnnotationExample {
             out.print("number : " + annotation.number() + " ");
             out.println("\n");
 
-            method[i].invoke(new UserClass(), null); // Execute the Method -
+            // Execute the Method - When the argument of Invoke function is null
+            // method[i].invoke(new UserClass(), null);
+
+            // Display UserClass result as a sequential way
+            method[i].invoke(new UserClass(), new Object[] {});
         }
     }
 }
