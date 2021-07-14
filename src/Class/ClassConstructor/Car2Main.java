@@ -15,5 +15,10 @@ public class Car2Main {
 
         Car2 c4 = new Car2("Black", "기아", "회물차");
         out.println(c4);
+
+        out.println("c1 == " + c1);
+        out.println("c2 == " + c2);
+        out.println("c3 == " + c3);
+        out.println("c4 == " + c4);
     }
 }
