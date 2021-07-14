@@ -10,7 +10,10 @@ public class Car2Main {
         Car2 c2 = new Car2("중형차");
         out.println(c2);
 
-        Car2 c3 = new Car2();
+        Car2 c3 = new Car2("현대", "대형차");
         out.println(c3);
+
+        Car2 c4 = new Car2("Black", "기아", "회물차");
+        out.println(c4);
     }
 }
