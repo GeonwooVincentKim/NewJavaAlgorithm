@@ -5,6 +5,9 @@ import static java.lang.System.out;
 import java.util.Scanner;
 
 public class ExceptionExample {
+    static String userID = "seo";
+    static String userPassword = "smg1234";
+
     public static void main(String[] args) throws Exception {
         try {
             Scanner sc = new Scanner(System.in);
