@@ -1,31 +1,31 @@
 package Collections.Object;
 
 public class Obj {
-    private int objectSize;
+    private int objectNumber;
     private String objectName;
 
     Obj() {
     }
 
-    Obj(int objectSize) {
-        this.setObjectSize(objectSize);
+    Obj(int objectNumber) {
+        this.setobjectNumber(objectNumber);
     }
 
     Obj(String objectName) {
         this.setObjectName(objectName);
     }
 
-    Obj(int objectSize, String objectName) {
-        this.setObjectSize(objectSize);
+    Obj(int objectNumber, String objectName) {
+        this.setobjectNumber(objectNumber);
         this.setObjectName(objectName);
     }
 
-    public int getObjectSize() {
-        return objectSize;
+    public int getobjectNumber() {
+        return objectNumber;
     }
 
-    public void setObjectSize(int objectSize) {
-        this.objectSize = objectSize;
+    public void setobjectNumber(int objectNumber) {
+        this.objectNumber = objectNumber;
     }
 
     public String getObjectName() {
