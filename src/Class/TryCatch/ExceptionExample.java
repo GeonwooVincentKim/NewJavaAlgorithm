@@ -9,8 +9,8 @@ public class ExceptionExample {
     static String userPassword = "smg1234";
 
     public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
         try {
-            Scanner sc = new Scanner(System.in);
 
             out.print("아이디 : ");
             String inputID = sc.nextLine();
@@ -20,9 +20,17 @@ public class ExceptionExample {
             String inputPassword = sc.nextLine();
             out.println(inputPassword);
 
-            sc.close();
+            if (!userID.equals(inputID)) {
+                throw new LoginException("아이디가 올바르지 않습니다 : ");
+            } else if (!userPassword.equals(inputPassword)) {
+                throw new LoginException("비밀번호가 올바르지 않습니다.");
+            }
+
+            // sc.close();
         } catch (Exception e) {
             out.println(e.getMessage());
+        } finally {
+            sc.close();
         }
     }
 }
