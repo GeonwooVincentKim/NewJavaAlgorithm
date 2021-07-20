@@ -24,11 +24,16 @@ public class ExceptionExample {
                 throw new LoginException("아이디가 올바르지 않습니다 : ");
             } else if (!userPassword.equals(inputPassword)) {
                 throw new LoginException("비밀번호가 올바르지 않습니다.");
+            } else {
+                out.println("로그인 성공");
             }
 
             // sc.close();
         } catch (Exception e) {
             out.println(e.getMessage());
+            out.println("---------------------------");
+            e.printStackTrace();
+
         } finally {
             sc.close();
         }
