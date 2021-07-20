@@ -24,5 +24,8 @@ public class EqualsExample {
         } else {
             out.println("obj1 Object and obj3 Object are different");
         }
+
+        ObjOverride objOverride1 = new ObjOverride(100);
+        out.println(objOverride1);
     }
 }
