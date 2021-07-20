@@ -75,7 +75,7 @@ public class TestStream {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        out.print("숫자 입력 : ");
+        out.print("랜덤 받을 숫자의 개수 입력 : ");
 
         int userInputLength = sc.nextInt();
 
