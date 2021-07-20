@@ -16,6 +16,8 @@ public class EqualsExample {
             out.println("obj1 object and obj2 object are different");
         }
 
+        out.println("====================================");
+
         Obj obj3 = obj1;
         out.println(obj3);
 
@@ -27,5 +29,14 @@ public class EqualsExample {
 
         ObjOverride objOverride1 = new ObjOverride(100);
         out.println(objOverride1);
+
+        ObjOverride objOverride2 = new ObjOverride(100);
+        out.println(objOverride2);
+
+        if (objOverride1.equals(objOverride2)) {
+            out.println("objOverride1 and objOverride2 are same");
+        } else {
+            out.println("objOverride1 and objOverride2 are different");
+        }
     }
 }
