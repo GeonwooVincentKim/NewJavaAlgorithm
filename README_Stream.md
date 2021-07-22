@@ -15,7 +15,8 @@ stream.forEach(string -> out.println(string));
 ## IntStream
 
 - `IntStream` can use `int` type which is `primitive type`
-- When the users or Developers adding new value into `IntStream` Object, then it notices to user only can add `int` type values.
+- When the users or Developers adding new value into `IntStream` Object, 
+then it notices to user only can add `int` type values.
 
 ```java
 int[] intArray = {1, 2, 3, 4, 5, 6};
