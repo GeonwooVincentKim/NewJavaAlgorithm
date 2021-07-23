@@ -5,8 +5,6 @@ import static java.lang.System.out;
 public class StringExample {
     public static void main(String[] args) {
         String[] str = { "1", "2", "3", "4" };
-        // String[] str = getTotalNumber();
-        // out.println(str);
 
         int sum = getTotalNumber(str);
         String printResult = printTotalNumber(sum);
