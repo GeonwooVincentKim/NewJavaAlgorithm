@@ -15,6 +15,11 @@ public class StringExample {
         Long sumLongType = getTotalLongNumber(str);
         String printLongResult = printTotalNumber(sumLongType);
         out.println(printLongResult);
+
+        // Print String arary type index as Double
+        Double sumDoubleType = getTotalDoubleNumber(str);
+        String printDoubleResult = printTotalNumber(sumDoubleType);
+        out.println(printDoubleResult);
     }
 
     public static int getTotalIntegerNumber(String[] str) {
@@ -37,6 +42,16 @@ public class StringExample {
         return sum;
     }
 
+    public static Double getTotalDoubleNumber(String[] str) {
+        Double sum = 0.0;
+
+        for (int i = 0; i < str.length; i++) {
+            sum += Double.parseDouble(str[i]);
+        }
+
+        return sum;
+    }
+
     public static String printTotalNumber(int sum) {
         String result = "Result (Integer) : " + sum;
         // for (int i = 0; i < sum; i++) {
@@ -48,7 +63,11 @@ public class StringExample {
 
     public static String printTotalNumber(Long sum) {
         String result = "Result (Long) : " + sum;
+        return result;
+    }
 
+    public static String printTotalNumber(Double sum) {
+        String result = "Result (Double) : " + sum;
         return result;
     }
 }
