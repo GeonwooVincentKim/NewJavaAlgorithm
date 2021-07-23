@@ -21,8 +21,6 @@ public class StringExample {
         int sum = 0;
 
         for (int i = 0; i < str.length; i++) {
-            out.println(str);
-
             sum += Integer.parseInt(str[i]);
         }
 
@@ -40,21 +38,16 @@ public class StringExample {
     }
 
     public static String printTotalNumber(int sum) {
-        String result = "";
-
-        for (int i = 0; i < sum; i++) {
-            result += sum + "\n";
-        }
+        String result = "Result (Integer) : " + sum;
+        // for (int i = 0; i < sum; i++) {
+        // result += sum + "\n";
+        // }
 
         return result;
     }
 
     public static String printTotalNumber(Long sum) {
-        String result = "";
-
-        for (int i = 0; i < sum; i++) {
-            result += sum + "\n";
-        }
+        String result = "Result (Long) : " + sum;
 
         return result;
     }
