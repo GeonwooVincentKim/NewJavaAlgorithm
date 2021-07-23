@@ -2,14 +2,20 @@ package Class.Object.String;
 
 import static java.lang.System.out;
 
+import Class.Object.String.StringHandler.StringHandlerClass;
+
 public class StringExample {
     public static void main(String[] args) {
         String[] str = { "1", "2", "3", "4" };
 
         // Print String array type index as Integer
-        int sum = getTotalIntegerNumber(str);
-        String printResult = printTotalNumber(sum);
-        out.println(printResult);
+
+        // int sum = getTotalIntegerNumber(str);
+        // String printResult = printTotalNumber(sum);
+        // out.println(printResult);
+
+        StringHandlerClass stringHandlerClass = new StringHandlerClass();
+        out.println(stringHandlerClass);
 
         // Print String array type index as Long
         Long sumLongType = getTotalLongNumber(str);
