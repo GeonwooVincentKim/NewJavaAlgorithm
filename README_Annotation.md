@@ -7,6 +7,13 @@
 - It provides the information to the Compiler and let it check that if there are Compiler Error or other specific error are existing.
 - Also provides the information when the Compiler Build, or generates codes automatically.
 
+```java
+    /*
+        The meaning of `Meta-Data`
+        1. It means Data for another Data
+        2. Data that explain about another Data
+    */
+```
 
 ## The sort of Annotation that the Java provides
 
