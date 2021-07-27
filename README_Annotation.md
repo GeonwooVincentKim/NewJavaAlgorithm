@@ -54,7 +54,7 @@
 - Make the Annotation can declare for several times
 
 
-## Enumerate Constant of `ElementType`
+## Enumerate Constant of `ElementType (Target)`
 
 ### `TYPE`
 
@@ -63,4 +63,58 @@
 - Interface
 - `Enum`
 
-### 
+### `Annotaiton Type`
+
+- Declare `Annotation Type` 
+
+- `Custom Annotation` part
+```java
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention({RetentionPolicy.RUNTIME})
+@Target({ElementType.ANNOTATION_TYPE})
+public @interface CustomAnnotation(){
+    String getUserName() default "홍길동";
+    int getUserAge() default 20;
+}
+```
+
+- The `Class` that calls `Custom Annotation` METHODS
+```java
+import CustomAnnotation;
+
+import static java.lang.System.out;
+
+public class CustomClass(){
+    @CustomAnnotation
+    public void method1(){
+        out.println("Method 1 Test");
+    }
+
+    @CustomAnnotation(getUserName="김길동")
+    public void method2(){
+        out.println("Method 2 Test");
+    }
+
+    @CustomAnnotation(getUserName="김파랑", getUserAge=30)
+    public void method3(){
+        out.println("Method 3 Test");
+    }
+}
+```
+
+- `Main program` that creates `Custom Annotation Instance`
+```java
+import CustomAnnotation;
+
+public class CustomAnnotationExample(){
+    public static void main(String[] args){
+        Method[] methodList = CustomAnnotation.class.getMethods();
+        out.println(methodList);
+    }
+}
+
+```
