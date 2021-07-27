@@ -15,6 +15,7 @@
     */
 ```
 
+
 ## The sort of Annotation that the Java provides
 
 ### `@Override` Annotation
@@ -25,3 +26,41 @@
 ### `@Deprecated` Annotation
 
 - Search 
+
+
+## Meta Annotation
+
+- Annotation that are `User Defined Annotation`, and it can be created by a user
+
+### `@Retention` Annotation
+
+- Set the Annotation Range
+- Set how far does the range to hava a strong influence on Annotation
+
+### `@Documented` Annotation
+
+- Set the information of `Documentation` should be expressed
+
+### `@Target` Annotation
+
+- Set the location of `Annotation` that will be going to be apply
+
+### `@Inherited` Annotation
+
+- Inheritate `Parent's Annotation` from `Child's Annotation`
+
+### `@Repeatable` Annotation
+
+- Make the Annotation can declare for several times
+
+
+## Enumerate Constant of `ElementType`
+
+### `TYPE`
+
+- When the type are Reference Type (Except `Array`), then use `TYPE`
+- Class
+- Interface
+- `Enum`
+
+### 
