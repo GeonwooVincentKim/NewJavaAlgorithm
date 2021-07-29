@@ -13,7 +13,8 @@ import Collections.Iterator.IteratorClass.ManageIterator;
 public class IteratorExample {
     public static void main(String[] args) {
         // Initialize Each Collection Instance(Or Static variable)
-        Iterator<Integer> iterator = null; // Static Varaible
+        // Allows all Class Type of <?>, Generic
+        Iterator<?> iterator = null; // Static Varaible
         out.println(iterator);
 
         // ManageIterator manageIterator = new ManageIterator();

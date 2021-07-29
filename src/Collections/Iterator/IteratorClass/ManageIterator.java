@@ -20,7 +20,7 @@ public class ManageIterator {
         this.iteratorInteger = iteratorInteger;
     }
 
-    public static String iteratorPrint(Iterator<Integer> iterator) {
+    public static String iteratorPrint(Iterator<?> iterator) {
         String result = "";
 
         int i = 0;
