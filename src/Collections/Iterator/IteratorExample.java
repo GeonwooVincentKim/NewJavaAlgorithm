@@ -17,8 +17,38 @@ public class IteratorExample {
         List<Integer> list = new ArrayList<>();
         out.println(list);
 
+        List<Integer> list2 = new ArrayList<>();
+        out.println(list2);
+
         Set<Integer> set = new HashSet<>();
         out.println(set);
+
+        Set<Integer> set2 = new HashSet<>();
+        out.println(set2);
+
+        // 1. Non-Iterator
+        for (int i = 1; i <= 5; i++) {
+            list.add(i);
+            set.add(i + 5);
+        }
+
+        out.println(list);
+        out.println(set);
+
+        // 2. Non-Iterator, The Object of Iterable Collection
+        /*
+         * The Object of Iterable Collection. Iterable allows to the Developer to
+         * iterate values and let the Developer can use `for-each-loop`
+         */
+        for (Integer iterableObject : list) {
+            list2.add(iterableObject);
+            set2.add(iterableObject + 5);
+        }
+
+        out.println(list2);
+        out.println(set2);
+
+        // 3. Iterator, The Object of Iterator Collection
 
     }
 }
