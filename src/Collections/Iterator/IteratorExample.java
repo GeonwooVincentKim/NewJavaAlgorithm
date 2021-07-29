@@ -14,6 +14,9 @@ public class IteratorExample {
         Iterator<Integer> iterator = null; // Static Varaible
         out.println(iterator);
 
+        // The Generic type of List is Integer
+        // --> If there is no Generic Type, we have to use
+        // Polymorphism `Force Type Converter`
         List<Integer> list = new ArrayList<>();
         out.println(list);
 
@@ -49,6 +52,14 @@ public class IteratorExample {
         out.println(set2);
 
         // 3. Iterator, The Object of Iterator Collection
+        /*
+         * The Object of Itereator Collection. Iterator is a Colllection type that
+         * allows to iterate the values and let the Developer use `Iterator` not
+         * `for-each-loop`
+         */
+        iterator = list.iterator();
 
+        out.println("The Iterator of List : " + iterator);
+        out.println("The Iterator of Set : " + set);
     }
 }
