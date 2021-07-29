@@ -57,8 +57,8 @@ public class IteratorExample {
 
         // 3. Iterator, The Object of Iterator Collection
         /*
-         * The Object of Itereator Collection. Iterator is a Colllection type that
-         * allows to iterate the values and let the Developer use `Iterator` not
+         * The Object of Itereator Collection. Iterator is a Collection type that allows
+         * to iterate the values and let the Developer use `Iterator` not
          * `for-each-loop`
          */
         iterator = list.iterator();
