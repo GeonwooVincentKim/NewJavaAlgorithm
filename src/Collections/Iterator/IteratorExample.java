@@ -58,8 +58,22 @@ public class IteratorExample {
          * `for-each-loop`
          */
         iterator = list.iterator();
+        String printIterator = iteratorPrint(iterator);
 
-        out.println("The Iterator of List : " + iterator);
+        out.println("The Iterator of List : " + "\n" + printIterator);
         out.println("The Iterator of Set : " + set);
+    }
+
+    public static String iteratorPrint(Iterator<Integer> iterator) {
+        String result = "";
+
+        int i = 0;
+        while (iterator.hasNext()) {
+            ++i;
+            result += "#" + i + " 번째 인덱스 값 -> " + iterator.next() + "\n";
+            iterator.remove();
+        }
+
+        return result;
     }
 }
