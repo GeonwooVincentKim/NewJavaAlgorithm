@@ -3,20 +3,21 @@ package Collections.Iterator.IteratorClass;
 import java.util.Iterator;
 
 public class ManageIterator {
-    private Iterator<Integer> iteratorInteger;
+    // Allows all Class Type of <?>, Generic
+    private Iterator<?> iteratorInteger;
 
     public ManageIterator() {
     }
 
-    public ManageIterator(Iterator<Integer> iteratorInteger) {
+    public ManageIterator(Iterator<?> iteratorInteger) {
         this.setIteratorInteger(iteratorInteger);
     }
 
-    public Iterator<Integer> getIteratorInteger() {
+    public Iterator<?> getIteratorInteger() {
         return iteratorInteger;
     }
 
-    public void setIteratorInteger(Iterator<Integer> iteratorInteger) {
+    public void setIteratorInteger(Iterator<?> iteratorInteger) {
         this.iteratorInteger = iteratorInteger;
     }
 
