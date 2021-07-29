@@ -77,6 +77,8 @@ public class Test {
         return findLocation;
     }
 
+    // public static int[] nonDuplicateArray(int[] )
+
     public static int binarySearch(int[] randomArray, int key) {
         int low = 0;
         int high = randomArray.length - 1;
