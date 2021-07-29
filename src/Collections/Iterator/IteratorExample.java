@@ -8,11 +8,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import Collections.Iterator.IteratorClass.ManageIterator;
+
 public class IteratorExample {
     public static void main(String[] args) {
         // Initialize Each Collection Instance(Or Static variable)
         Iterator<Integer> iterator = null; // Static Varaible
         out.println(iterator);
+
+        // ManageIterator manageIterator = new ManageIterator();
 
         // The Generic type of List is Integer
         // --> If there is no Generic Type, we have to use
@@ -58,13 +62,19 @@ public class IteratorExample {
          * `for-each-loop`
          */
         iterator = list.iterator();
-        String printIterator = iteratorPrint(iterator);
-
+        // String printIterator = ManageIterator.iteratorIntegerPrint(iterator);
+        String printIterator = iteratorIntegerPrint(iterator);
         out.println("The Iterator of List : " + "\n" + printIterator);
-        out.println("The Iterator of Set : " + set);
+
+        // iterator = null;
+        iterator = set.iterator();
+        // printIterator = ManageIterator.iteratorIntegerPrint(iterator);
+        printIterator = iteratorIntegerPrint(iterator);
+        out.println("The Iterator of Set : " + "\n" + printIterator);
+
     }
 
-    public static String iteratorPrint(Iterator<Integer> iterator) {
+    public static String iteratorIntegerPrint(Iterator<Integer> iterator) {
         String result = "";
 
         int i = 0;
