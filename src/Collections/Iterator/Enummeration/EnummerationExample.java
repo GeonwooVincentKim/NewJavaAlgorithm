@@ -18,12 +18,25 @@ public class EnummerationExample {
         return vector;
     }
 
-    // Print Enummerartion value to get enumerated value
+    // Print Enummerartion value to check that the value which were converted from
+    // Integer insert into Enumeration type well or not.
     public static String printEnumeration(Enumeration<Integer> enumeration) {
         String result = "";
 
         while (enumeration.hasMoreElements()) {
-            out.println(enumeration.nextElement());
+            result += enumeration.nextElement() + " ";
+        }
+
+        return result;
+    }
+
+    // Print Iterator type value to check that the value which were converted from
+    // Integer insert into Iterator type value well or not.
+    public static String printIterator(Iterator<Integer> iterator) {
+        String result = "";
+
+        while (iterator.hasNext()) {
+            result += iterator.next() + " ";
         }
 
         return result;
@@ -37,20 +50,21 @@ public class EnummerationExample {
         // 2. Enumerate Vector type value as Enumeration type values.
         Enumeration<Integer> enumeration = vector.elements();
         out.println(enumeration);
+        out.println();
 
         // 3. Print Enumerated values.
-        out.println("Enumeration 출력 : ");
         String printEnumerationValue = printEnumeration(enumeration);
-        out.println(printEnumerationValue);
+        out.println("Enumeration 출력 : " + printEnumerationValue);
+        out.println("\n\n");
 
         // 4. Iterate vector type values.
-        Iterator<Integer> it = vector.iterator();
-        out.println(it);
+        Iterator<Integer> iterator = vector.iterator();
+        out.println(iterator);
+        out.println();
 
         // 5. Print Vector type values.
-        out.println("Iterator 출력 : ");
-        while (it.hasNext()) {
-            out.println(it.next());
-        }
+        String printIteratorValue = printIterator(iterator);
+        out.println("Iterator 출력 : " + printIteratorValue);
+        out.println();
     }
 }
