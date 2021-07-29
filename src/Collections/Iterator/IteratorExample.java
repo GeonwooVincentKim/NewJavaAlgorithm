@@ -65,10 +65,8 @@ public class IteratorExample {
         String printIterator = ManageIterator.iteratorPrint(iterator);
         out.println("The Iterator of List : " + "\n" + printIterator);
 
-        // iterator = null;
         iterator = set.iterator();
         printIterator = ManageIterator.iteratorPrint(iterator);
         out.println("The Iterator of Set : " + "\n" + printIterator);
-
     }
 }
