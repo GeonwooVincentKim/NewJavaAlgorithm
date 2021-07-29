@@ -47,6 +47,36 @@ public class Test {
         return sortArray;
     }
 
+    // Find Index which are duplicates in the `RandomArray`
+    public static boolean duplicateValueExist(int[] randomArray, int indexLocate) {
+        boolean isDuplicateValueExist = false;
+
+        for (int i = 0; i < randomArray.length; i++) {
+            if (randomArray[i] == indexLocate) {
+                isDuplicateValueExist = true;
+                return isDuplicateValueExist;
+            }
+        }
+
+        return isDuplicateValueExist;
+    }
+
+    public static int duplicateValueIndexSearch(int[] randomArray, int indexLocate) {
+        int findLocation = 0;
+
+        // Current `Big-O Notation` --> O(N)
+        // Calculate the time of `Big-O Notation` Operation --> O(N) * O(1) == O(N)
+        for (int i = 0; i < randomArray.length; i++) {
+            // In this case, the current `Big-O Notation` --> O(1)
+            if (randomArray[i] == indexLocate) {
+                findLocation++;
+                return findLocation;
+            }
+        }
+
+        return findLocation;
+    }
+
     public static int binarySearch(int[] randomArray, int key) {
         int low = 0;
         int high = randomArray.length - 1;
@@ -77,12 +107,12 @@ public class Test {
         // 2. Get the random-number as the number entered by User.
         int[] randomArray = setRandomArray(userInput);
         String printRandomArray = printRandomArray(randomArray);
-        out.println(printRandomArray);
+        out.println("Unsorted Array : " + printRandomArray);
 
         // 3. Sort array before find the value.
         int[] sortArray = sortRandomArray(randomArray);
         String printSortArray = printRandomArray(sortArray);
-        out.println(printSortArray);
+        out.println("Sorted Array : " + printSortArray);
 
         // 4. Find the index that the user looking for using `Binary-Search`.
         // In this case, you can use `While()` Loop or `Recursive-Function()`
@@ -92,7 +122,7 @@ public class Test {
 
         // 5. Get the result where the index located and display to User
         // that can add the new index between another indexs or not.
-        String printResult = printRandomArray + "\n" + printSortArray + "\n" + getIndex;
+        String printResult = printRandomArray + "\n" + printSortArray + "\n" + "찾고자 하는 인덱스의 위치 : " + getIndex + "번째";
         out.print(printResult);
 
         sc.close();
