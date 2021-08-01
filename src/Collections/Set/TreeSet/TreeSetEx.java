@@ -43,7 +43,7 @@ public class TreeSetEx {
         out.println("------------------------------");
 
         // Descending Order
-        set = new TreeSet(new Descend());
+        set = new TreeSet<>(new Descend());
         set.add("ant");
         set.add("alias");
         set.add("batman");
