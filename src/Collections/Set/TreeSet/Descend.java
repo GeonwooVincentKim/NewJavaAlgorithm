@@ -3,7 +3,7 @@ package Collections.Set.TreeSet;
 import java.util.Comparator;
 
 @SuppressWarnings("unchecked")
-public class Descend implements Comparator {
+public class Descend implements Comparator<Object> {
     @Override
     public int compare(Object o1, Object o2) {
         Comparable<Object> c1 = (Comparable<Object>) o1;
