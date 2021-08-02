@@ -81,6 +81,7 @@ public class StreamCalculator {
     // 4. countArray 배열을 넘겨받은 후, countArray 배열의 빈도수를 찾음과 동시에 특정 숫자의 빈도 수와
     // 전체 배열을 각각의 기준에 따라 정렬한다.
     public static int[] getSortCountArray(int[] randomArray, int[] countArray) {
+        // StreamController<?> streamController = new StreamController<>();
         int[] getSortCountArray = new int[countArray.length];
         // int[] getSortCountArray = getCountArray(countArray);
         int currentValue = 0; // 현재 값
@@ -101,6 +102,7 @@ public class StreamCalculator {
                 nextCount = arrayFrequency(randomArray, nextValue);
 
                 if (currentCount < nextCount) {
+
                     swapArray(randomArray, i, j);
                     swapArray(countArray, i, j);
                     // getSortCountArray = countArray; // 얕은 복사
