@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 import Stream.StreamVariousType.FileAttribute.FileAttributes;
-// import Stream.StreamVariousType.StreamAttribute.StreamController;
+import Stream.StreamVariousType.StreamAttribute.StreamController;
 
 public class StreamCalculator {
     public static Scanner readFile(FileAttributes fileAttribute, String fileName) {
@@ -29,8 +29,8 @@ public class StreamCalculator {
     }
 
     public static void main(String[] args) {
-        // StreamController<?> streamController = new StreamController<>();
-        // out.println(streamController);
+        StreamController<?> streamController = new StreamController<>();
+        out.println(streamController);
 
         File file = null;
         Scanner fileReader = null;
@@ -44,8 +44,6 @@ public class StreamCalculator {
         Scanner sc = new Scanner(System.in);
         out.print("원하시는 메뉴의 숫자를 입력해주세요 : ");
 
-        // int getFileLines = 0;
-
         int userMenuInput = sc.nextInt();
         if (userMenuInput == 1) {
             fileReader = readFile(fileAttributes, inputFileName);
@@ -53,7 +51,7 @@ public class StreamCalculator {
             getResult(fileAttributes, getFileLines, outputFileName);
         } else if (userMenuInput == 2) {
             fileReader = new Scanner(System.in);
-            out.println("원하시는 숫자의 길이를 입력해주세요");
+            out.print("원하시는 숫자의 길이를 입력해주세요 : ");
             int getFileLines = fileReader.nextInt();
             getResult(fileAttributes, getFileLines, outputFileName);
         } else {
