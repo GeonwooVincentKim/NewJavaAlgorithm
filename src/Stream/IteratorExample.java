@@ -14,31 +14,59 @@ public class IteratorExample {
         List<String> arrayList = new ArrayList<String>();
 
         // 1. For-Loop -> (Include Array)
-        out.println("for 문 이용 -> (Array 사용)");
+        out.println("for 문 이용 -> (Array 사용)\n");
+
+        long start = System.currentTimeMillis();
+        out.println("for 문 이용 시작 시간 : " + start);
+
         for (int i = 0; i < array.length; i++) {
             arrayList.add(array[i]);
             out.print(arrayList.get(i) + " ");
         }
 
+        long end = System.currentTimeMillis();
+        out.println("for 문 이용 종료 시간 : " + end);
+        out.println("for 문 이용 총 소요 시간 : " + (end - start) + "밀리 초");
+
+        out.println();
+
         out.println(arrayList);
         out.println("-----------------------------");
 
         // 2. Outer-Iterator -> (Include Array)
-        out.println("외부 반복자 이용 -> (Array 사용)");
+        out.println("외부 반복자 이용 -> (Array 사용)\n");
         Iterator<String> iterator = arrayList.iterator();
         out.println(iterator);
+
+        start = System.currentTimeMillis();
+        out.println("외부 반복자 이용 시작 시간 : " + start);
 
         while (iterator.hasNext()) {
             out.println(iterator.next());
         }
 
+        end = System.currentTimeMillis();
+        out.println("외부 반복자 문 이용 종료 시간 : " + end);
+        out.println("외부 반복자 문 이용 총 소요 시간 : " + (end - start) + "밀리 초");
+
+        out.println();
+
         out.println("-----------------------------");
 
         // 3. Inner-Iterator -> (Include Array)
-        out.println("내부 반복자 이용 -> (Array 사용)");
+        out.println("내부 반복자 이용 -> (Array 사용)\n");
+
+        start = System.currentTimeMillis();
+        out.println("내부 반복자 이용 시작 시간 : " + start);
+
         arrayList.stream().forEach(s -> out.println(s));
 
+        end = System.currentTimeMillis();
+        out.println("내부 반복자 문 이용 종료 시간 : " + end);
+        out.println("내부 반복자 문 이용 총 소요 시간 : " + (end - start) + "밀리 초");
+
         out.println();
+
         out.println("=============================");
         out.println();
 
