@@ -1,8 +1,8 @@
-package Stream.FileStream;
+package Thread;
 
 import static java.lang.System.out;
 
-public class FileToStream {
+public class ThreadSleepTest {
     public static void main(String[] args) {
         Thread t1 = new Thread(new Runnable() {
             @Override
