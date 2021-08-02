@@ -27,4 +27,10 @@ public class StreamController<T> {
     public void setValueTwo(T valueTwo) {
         this.valueTwo = valueTwo;
     }
+
+    public void swap(T n1, T n2) {
+        T temp = n1;
+        n1 = n2;
+        n2 = temp;
+    }
 }
