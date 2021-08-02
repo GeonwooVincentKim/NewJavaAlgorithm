@@ -13,22 +13,14 @@ public class FileAttributes implements Files {
     private Scanner fileReader;
     private FileWriter fileWriter;
 
-    private String readFileName;
-    private String writeFileName;
-    private String result;
-
     public FileAttributes() {
 
     }
 
-    public FileAttributes(File file, Scanner fileReader, FileWriter fileWriter, String readFileName,
-            String writeFileName, String result) {
+    public FileAttributes(File file, Scanner fileReader, FileWriter fileWriter) {
         this.setFile(file);
         this.setFileReader(fileReader);
         this.setFileWriter(fileWriter);
-        this.setReadFileName(readFileName);
-        this.setWriteFileName(writeFileName);
-        this.setResult(result);
     }
 
     public File getFile() {
@@ -55,33 +47,10 @@ public class FileAttributes implements Files {
         this.fileWriter = fileWriter;
     }
 
-    public String getReadFileName() {
-        return readFileName;
-    }
-
-    public void setReadFileName(String readFileName) {
-        this.readFileName = readFileName;
-    }
-
-    public String getWriteFileName() {
-        return writeFileName;
-    }
-
-    public void setWriteFileName(String writeFileName) {
-        this.writeFileName = writeFileName;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
-    }
-
     // Read File
     @Override
     public Scanner readFile(String fileName) {
+        fileReader = null;
         file = new File(fileName);
 
         try {
@@ -96,11 +65,13 @@ public class FileAttributes implements Files {
             e.printStackTrace();
         }
 
-        return null;
+        return fileReader;
     }
 
     @Override
     public void writeFile(String fileName, String result) {
+        fileWriter = null;
+
         try {
             fileWriter = new FileWriter(fileName);
             fileWriter.write(result);
