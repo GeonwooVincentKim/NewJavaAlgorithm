@@ -8,13 +8,28 @@ import java.util.Scanner;
 
 import static java.lang.System.out;
 
-public class FileAttribute implements Files {
+public class FileAttributes implements Files {
     private File file;
     private Scanner fileReader;
     private FileWriter fileWriter;
 
-    private String fileName;
+    private String readFileName;
+    private String writeFileName;
     private String result;
+
+    public FileAttributes() {
+
+    }
+
+    public FileAttributes(File file, Scanner fileReader, FileWriter fileWriter, String readFileName,
+            String writeFileName, String result) {
+        this.setFile(file);
+        this.setFileReader(fileReader);
+        this.setFileWriter(fileWriter);
+        this.setReadFileName(readFileName);
+        this.setWriteFileName(writeFileName);
+        this.setResult(result);
+    }
 
     public File getFile() {
         return file;
@@ -40,12 +55,20 @@ public class FileAttribute implements Files {
         this.fileWriter = fileWriter;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getReadFileName() {
+        return readFileName;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setReadFileName(String readFileName) {
+        this.readFileName = readFileName;
+    }
+
+    public String getWriteFileName() {
+        return writeFileName;
+    }
+
+    public void setWriteFileName(String writeFileName) {
+        this.writeFileName = writeFileName;
     }
 
     public String getResult() {
