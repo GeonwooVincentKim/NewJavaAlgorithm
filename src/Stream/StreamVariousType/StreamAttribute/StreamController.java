@@ -1,4 +1,4 @@
-package Stream.StreamVariousType;
+package Stream.StreamVariousType.StreamAttribute;
 
 public class StreamController<T> {
     private T valueOne;
