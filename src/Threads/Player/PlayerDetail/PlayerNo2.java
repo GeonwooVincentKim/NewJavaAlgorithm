@@ -2,11 +2,11 @@ package Threads.Player.PlayerDetail;
 
 import Threads.SmartPhone.SmartPhoneGame2;
 
-public class PlayerNo1 extends Thread {
+public class PlayerNo2 extends Thread {
     private SmartPhoneGame2 game;
 
     public void setSmartPhoneGame2(SmartPhoneGame2 game) {
-        this.setName("Player1");
+        this.setName("Player2");
         this.game = game;
     }
 
