@@ -25,8 +25,8 @@ public class SmartPhoneGame2 {
             this.level++;
 
             try {
-                Thread.sleep(3000);
-            } catch (Exception e) {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
                 out.println(Thread.currentThread().getName() + " Level : " + this.level);
 
                 if (this.level % 10 == 0)

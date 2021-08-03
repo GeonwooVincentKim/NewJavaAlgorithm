@@ -2,7 +2,8 @@ package Threads;
 
 import static java.lang.System.out;
 
-import Threads.Player.Player;
+import Threads.Player.PlayerDetail.PlayerNo1;
+import Threads.Player.PlayerDetail.PlayerNo2;
 import Threads.SmartPhone.SmartPhoneGame2;
 
 public class ThreadSynchronized {
@@ -10,34 +11,16 @@ public class ThreadSynchronized {
         SmartPhoneGame2 game = new SmartPhoneGame2();
         out.println(game);
 
-        Player p1 = new Player() {
-            private SmartPhoneGame2 game;
-            private Thread thread;
-
-            // public void setSmartPhoneGame1(SmartPhoneGame2 game) {
-            // this.setName("Player");
-            // this.game = game;
-            // }
-
-            // @Override
-            // public void run() {
-            // game.increaseLevel();
-            // }
-
-            @Override
-            public void setSmartPhoneGame2(SmartPhoneGame2 game) {
-                this.setName("Player");
-                this.game = game;
-            }
-
-            public void run() {
-                thread.run();
-                game.increaseLevel();
-            }
-        };
-
+        PlayerNo1 p1 = new PlayerNo1();
         out.println(p1);
-        p1.setSmartPhoneGame2(game);
-        // p1.setSmartPhoneGame(game);
+
+        p1.setSmartPhoneGame1(game);
+        p1.start();
+
+        PlayerNo2 p2 = new PlayerNo2();
+        out.println(p2);
+
+        p2.setSmartPhoneGame2(game);
+        p2.start();
     }
 }
