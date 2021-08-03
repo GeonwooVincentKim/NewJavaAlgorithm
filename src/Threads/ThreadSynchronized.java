@@ -1,8 +1,8 @@
-package Thread;
+package Threads;
 
 import static java.lang.System.out;
 
-import Thread.SmartPhone.SmartPhoneGame2;
+import Threads.SmartPhone.SmartPhoneGame2;
 
 public class ThreadSynchronized {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class ThreadSynchronized {
         Player1 p1 = new Player1() {
             private SmartPhoneGame2 game;
 
-            public void setSmartPhoneGame(SmartPhoneGame2 game) {
+            public void setSmartPhoneGame1(SmartPhoneGame2 game) {
                 this.setName("Player");
                 this.game = game;
             }
@@ -24,5 +24,6 @@ public class ThreadSynchronized {
         };
 
         out.println(p1);
+        // p1.setSmartPhoneGame(game);
     }
 }

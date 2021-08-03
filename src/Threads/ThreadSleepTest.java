@@ -1,4 +1,4 @@
-package Thread;
+package Threads;
 
 import static java.lang.System.out;
 

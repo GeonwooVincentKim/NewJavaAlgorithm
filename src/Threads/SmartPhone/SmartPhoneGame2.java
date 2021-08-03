@@ -1,4 +1,6 @@
-package Thread.SmartPhone;
+package Threads.SmartPhone;
+
+import static java.lang.System.out;
 
 public class SmartPhoneGame2 {
     private int level;
@@ -20,7 +22,16 @@ public class SmartPhoneGame2 {
 
     public void increaseLevel() {
         while (true) {
+            this.level++;
 
+            try {
+                Thread.sleep(3000);
+            } catch (Exception e) {
+                out.println(Thread.currentThread().getName() + " Level : " + this.level);
+
+                if (this.level % 10 == 0)
+                    break;
+            }
         }
     }
 }
