@@ -17,4 +17,10 @@ public class SmartPhoneGame2 {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    public void increaseLevel() {
+        while (true) {
+
+        }
+    }
 }
