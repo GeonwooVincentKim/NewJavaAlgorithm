@@ -14,7 +14,7 @@ public class ThreadSynchronized {
         PlayerNo1 p1 = new PlayerNo1();
         out.println(p1);
 
-        p1.setSmartPhoneGame1(game);
+        p1.setSmartPhoneGame2(game);
         p1.start();
 
         PlayerNo2 p2 = new PlayerNo2();
