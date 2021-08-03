@@ -11,6 +11,7 @@ public class PlayerNo2 extends Thread {
 
     public void setGame(SmartPhoneGame2 game) {
         this.game = game;
+        this.game.setLevel(1);
     }
 
     public void setSmartPhoneGame2(SmartPhoneGame2 game) {

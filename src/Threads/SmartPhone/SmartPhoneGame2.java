@@ -9,7 +9,11 @@ public class SmartPhoneGame2 {
         return this.level;
     }
 
-    public void increaseLevel() {
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public synchronized void increaseLevel() {
         while (true) {
             this.level++;
 
